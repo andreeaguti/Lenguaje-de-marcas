@@ -1,0 +1,168 @@
+/* --- CONFIGURACIÓN PRINCIPAL DEL CONTENEDOR GRID --- */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.1fr 0.7fr 0.3fr 1.1fr 0.7fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px; /* Quitamos el gap */
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Titulo Titulo Titulo"
+    "Imagen1 Imagen2 Imagen3"
+    "Texto1 Texto2 Texto3"
+    "Titulo2 Titulo2 Titulo2"
+    "Imagen4 Imagen5 Imagen6"
+    "Texto4 Texto5 Texto6";
+  
+  background-color: black;
+  padding: 0 10px 20px 10px; /* Relleno lateral y en la parte inferior */
+}
+
+/* --- ESTILOS DE TÍTULOS DE SECCIÓN --- */
+
+.Titulo, .Titulo2 {
+  color: white;
+  text-align: left;
+  padding: 20px 10px 10px;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin: 0;
+}
+.Titulo { grid-area: Titulo; }
+.Titulo2 { grid-area: Titulo2; }
+
+
+/* --- ESTILOS DE ÁREAS DE IMAGEN (Filas 2 y 5) --- */
+
+.Imagen1, .Imagen2, .Imagen3,
+.Imagen4, .Imagen5, .Imagen6 {
+    /* Clave: Hacemos que la celda de la imagen sea el punto de referencia relativo */
+    position: relative; 
+    overflow: hidden;
+    margin: 5px; /* Espacio entre los bloques */
+    border-top-left-radius: 5px; /* Bordes superiores redondeados */
+    border-top-right-radius: 5px;
+}
+
+.Imagen1 img, .Imagen2 img, .Imagen3 img,
+.Imagen4 img, .Imagen5 img, .Imagen6 img {
+    /* La imagen debe ocupar todo el espacio de su celda */
+    width: 100%; /* responsividad */
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+    display: block;
+}
+
+.Imagen1 { grid-area: Imagen1; }
+.Imagen2 { grid-area: Imagen2; }
+.Imagen3 { grid-area: Imagen3; }
+.Imagen4 { grid-area: Imagen4; }
+.Imagen5 { grid-area: Imagen5; }
+.Imagen6 { grid-area: Imagen6; }
+
+
+/* --- ESTILOS DE ÁREAS DE TEXTO (Filas 3 y 6) --- */
+
+.Texto1, .Texto2, .Texto3,
+.Texto4, .Texto5, .Texto6 {
+    grid-area: Texto1; /* o el área correspondiente */
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin: 5px; /* Debe coincidir con el margen de la imagen para crear un bloque */
+    border-bottom-left-radius: 5px; /* Bordes inferiores redondeados */
+    border-bottom-right-radius: 5px;
+    
+    /* Usamos Flexbox para distribuir el contenido (títulos, párrafo, botón) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Espacio entre el texto superior y el botón */
+}
+
+/* Redefinición de las áreas */
+.Texto1 { grid-area: Texto1; }
+.Texto2 { grid-area: Texto2; }
+.Texto3 { grid-area: Texto3; }
+.Texto4 { grid-area: Texto4; }
+.Texto5 { grid-area: Texto5; }
+.Texto6 { grid-area: Texto6; }
+
+
+/* --- ESTILOS DE TIPOGRAFÍA DENTRO DE LAS CAJAS DE TEXTO --- */
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.Texto1 h2, .Texto2 h2, .Texto3 h2, 
+.Texto4 h2, .Texto5 h2, .Texto6 h2 {
+    font-size: 1em;
+    font-weight: 400;
+    color: #aaa; /* Títulos secundarios en gris */
+}
+
+.Texto4 h1, .Texto5 h1, .Texto6 h1 {
+    font-size: 1.5em; /* Títulos principales grandes dentro de los bloques de servicio */
+    margin-top: 5px;
+}
+/* Estilo especial para el título "Envío Rápido" que es grande en el original */
+.Texto3 h2 { /* Tu HTML original lo tiene como h2, aunque visualmente es un título principal */
+    font-size: 1.5em; 
+    color: white;
+}
+
+p {
+    font-size: 0.9em;
+    margin: 8px 0 10px 0;
+}
+
+
+/* --- ESTILOS DE BOTONES --- */
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+    align-self: flex-start; /* Alinea el botón a la izquierda */
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-top: auto; /* Empuja el botón hacia la parte inferior del contenedor de texto */
+}
+
+/* Estilo especial para el botón de "Envío Rápido" (Bloque 3) */
+.Texto3 button {
+    border-color: red;
+    background-color: red;
+}
+
+@media (max-width: 768px) {
+    .container {
+        /* Cambia de 3 columnas a 1 columna para móviles */
+        grid-template-columns: 1fr; 
+        
+        /* El nuevo orden de las áreas en 1 columna */
+        grid-template-areas:
+            "Titulo"
+            "Imagen1"
+            "Texto1"
+            "Imagen2"
+            "Texto2"
+            "Imagen3"
+            "Texto3"
+            "Titulo2"
+            "Imagen4"
+            "Texto4"
+            "Imagen5"
+            "Texto5"
+            "Imagen6"
+            "Texto6";
+            
+        /* Las filas ya no necesitan fracciones, se ajustan al contenido */
+        grid-template-rows: auto; 
+    }
+}

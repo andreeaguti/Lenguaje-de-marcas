@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+    margin: 40px;
+}
+
+h1 {
+    color: #b5e5bb;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 1px solid #555;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+th {
+    background-color: #d7e8fa;
+}
+
+
+
+/* Personalización de categorías */
+.fila-entrante th { color: #0095f8; }
+.fila-principal th { color: #30c0dd; }
+.fila-postre th { color: #385bce; }
+

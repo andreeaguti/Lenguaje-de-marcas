@@ -1,0 +1,113 @@
+/* --- ESTILOS GENERALES Y TEMÁTICOS --- */
+:root {
+    --color-principal: #0077b6; /* Azul Viaje */
+    --color-secundario: #48cae4; 
+    --color-acento: #ffc300; 
+    --color-fondo: #f8f9fa;
+    --color-texto: #333;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+.main-grid-layout {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--color-principal);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 { color: var(--color-principal); border-bottom: 2px solid var(--color-secundario); padding-bottom: 10px; }
+h3 { margin-top: 30px; color: var(--color-texto); font-size: 1.8em; }
+ul { list-style: none; padding: 0; }
+
+
+/* --- GRID GENERADA PARA DESTINOS --- */
+
+.destinos-grid {
+    margin-top: 30px;
+    display: grid;
+    /* Definición rígida de 3 columnas para escritorio */
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: auto;
+    gap: 30px;
+    /* Las áreas se definen aquí si hubiéramos envuelto el h3 también */
+    /* grid-template-areas: ... */
+}
+
+/* Estilos de las tarjetas (igual que antes) */
+.card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--color-principal);
+}
+
+.card p {
+    font-weight: bold;
+    font-size: 1.8em;
+    color: var(--color-acento);
+}
+.destino-paris { border-color: #e56d78; }
+.destino-ny { border-color: #00bcd4; }
+.destino-tokio { border-color: #ff9900; }
+
+/* --- GRID GENERADA PARA PROMOCIONES Y PLANES --- */
+
+.promociones-grid {
+    margin-top: 40px;
+    display: grid;
+    /* Definición de 2 columnas iguales */
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto;
+    gap: 30px;
+    /* Definimos las áreas para posicionamiento si fuera necesario, 
+       pero aquí solo usamos el orden predeterminado. */
+}
+
+.oferta {
+    /* Mantenemos estilos creativos de fondo */
+    background-color: var(--color-principal);
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.oferta h4 {
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+}
+
+.highlight {
+    font-weight: bold;
+    color: var(--color-acento);
+}
+
+/* --- RESPONSIVIDAD GENERADA (GRID LAYOUT CHANGE) --- */
+
+@media (max-width: 768px) {
+    /* Cambio de 3 a 1 columna para Destinos en móvil */
+    .destinos-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Cambio de 2 a 1 columna para Promociones en móvil */
+    .promociones-grid {
+        grid-template-columns: 1fr;
+    }
+}

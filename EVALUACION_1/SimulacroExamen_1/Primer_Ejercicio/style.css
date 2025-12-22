@@ -1,0 +1,38 @@
+header h1 {
+  justify-content: center;
+  display: flex;
+}
+
+header {
+  background-color: #6a74d4;
+  color: white;
+  padding: 10px 0; 
+  justify-content: center;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 1.2em;
+  justify-content: center;
+  display: flex;
+}
+.bolera {
+  background-color: rgb(231, 246, 247);
+  border: 2px solid #a9dcfa;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.botones {
+justify-content: center;
+color: rgb(51, 51, 51);
+bottom: 15px;
+}
+.comprar {
+    background-color: rgb(255, 255, 255);
+}

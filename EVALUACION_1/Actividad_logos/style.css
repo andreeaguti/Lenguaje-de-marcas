@@ -1,0 +1,61 @@
+
+.container {  
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+  grid-template-rows: 1.3fr 0.7fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "I1 I2 I3 I4 I5"
+    "T1 T2 T3 T4 T5";
+}
+
+.I1 { grid-area: I1; 
+  width: 20%;
+}
+
+.I2 { grid-area: I2; 
+  width: 20%;
+}
+
+.I3 { grid-area: I3; 
+  width: 20%;
+}
+
+.I4 { grid-area: I4; 
+  width: 20%;
+}
+
+.I5 { grid-area: I5; 
+  width: 20%;
+}
+
+.T1 { grid-area: T1; 
+
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;}
+
+.T2 { grid-area: T2; 
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;  
+}
+
+.T3 { grid-area: T3; 
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;  
+}
+
+.T4 { grid-area: T4; 
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;  
+}
+
+.T5 { grid-area: T5; 
+  font-size: 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;  
+}

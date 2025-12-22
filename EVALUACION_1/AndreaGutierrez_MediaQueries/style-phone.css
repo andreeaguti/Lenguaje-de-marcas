@@ -1,0 +1,46 @@
+
+.container {
+    background-color: #DDEEFF; 
+}
+.container {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;   
+    grid-template-areas:
+        "Encabezado"
+        "MenuNavegacion"
+        "SeccionPrincipal"
+        "Tabla"
+        "n1"
+        "n2"
+        "n3"; 
+}
+
+/* Diseño Vertical */
+.MenuNavegacion {
+    overflow: visible; 
+}
+nav ul li {
+    float: none; 
+    width: 100%; 
+}
+
+/* Mostrar filas como bloques  */
+.Tabla table {
+    width: 100%; 
+    border-collapse: collapse;
+}
+
+.Tabla tr {
+    display: block; /* Cada fila se comporta como un bloque apilado */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+.Tabla td, .Tabla th {
+    display: block; /* Las celdas se comportan como bloques */
+    width: 100%; /* Ocupa todo el ancho de la fila */
+    padding: 8px;
+    text-align: left;
+}
+.Tabla td:before {
+    font-weight: bold;
+}
