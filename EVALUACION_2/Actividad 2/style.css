@@ -8,11 +8,13 @@ body {
 } 
  
 h1 { 
-    color: #007BFF; 
+    color: #270257; 
+    margin-bottom: 30px;
+    font-weight: 700;
 } 
  
 button { 
-    background-color: #007BFF; 
+    background-color: #520996; 
     color: white; 
     border: none; 
     padding: 10px 20px;
