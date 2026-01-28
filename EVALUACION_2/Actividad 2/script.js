@@ -1,274 +1,87 @@
-console.log("el script funciona chat");
+document.addEventListener('DOMContentLoaded', () => {
 
-const textopantalla = document.getElementById('mensaje');
+    // --- 1. Mensaje de bienvenida ---
+    alert("Página lista");
 
-const boton1 = document.getElementById('boton1');
-const boton2 = document.getElementById('boton2');
-const boton3 = document.getElementById('boton3');
-const boton4 = document.getElementById('boton4');
-const boton5 = document.getElementById('boton5');
-const boton6 = document.getElementById('boton6');
-const boton7 = document.getElementById('boton7');
-const boton8 = document.getElementById('boton8');
-const boton9 = document.getElementById('boton9');
-const boton10 = document.getElementById('boton10');
-const boton11 = document.getElementById('boton11');
-const boton12 = document.getElementById('boton12');
-const boton13 = document.getElementById('boton13');
-const boton14 = document.getElementById('boton14');
+    // --- 2. Cambiar texto automáticamente ---
+    const titulo = document.getElementById('titulo');
+    titulo.textContent = "Contenido cargado correctamente";
 
-//EJERCICIO 1
-boton1.addEventListener('click', () => {
-    console.log('el boton1 ha sido pulsado');
-    var edad = prompt("Introduzca la edad ");
-    if (edad >= 18){
-        textopantalla.textContent = 'Es mayor de edad';
-    }
-    textopantalla.textContent = 'Tiene ' + edad + ' años ';
-});
 
-//EJERCICIO 2
-boton2.addEventListener('click', () => {
-    console.log('el boton2 ha sido pulsado');
-    var edad = prompt("Introduzca la edad ");
-    if (edad >= 18){
-        textopantalla.textContent = 'Es mayor de edad';
-    }
-    else {
-        textopantalla.textContent = '¡Es menor de edad!';
-    };
-});
+    // --- 3. Contador básico ---
+    let cuenta = 0;
+    const btnContador = document.getElementById('btnContador');
+    const spanContador = document.getElementById('contador');
 
-//EJERCICIO 3
-boton3.addEventListener('click', () => {
-    console.log('Ejercicio 3');
-    var texto = "";
-    for (i = 0; i < 11; i++){
-        texto = texto + i + "";
-    }
-    textopantalla.textContent = texto;
-});
+    btnContador.addEventListener('click', () => {
+        cuenta++;
+        spanContador.textContent = cuenta;
+    });
 
-//EJERCICIO 4
-boton4.addEventListener('click', () => {
-    console.log('Ejercicio 4');
-    var texto = "";
-    for (i = 0; i < 202; i = i + 2){
-        texto = texto + i + "";
-    }
-    textopantalla.textContent = texto;
-});
+    // --- 4. Cambiar color de fondo ---
+    const btnColor = document.getElementById('btnColor');
+    const cajaColor = document.getElementById('cajaColor');
 
-//EJERCICIO 5
-boton5.addEventListener('click', () => {
-    console.log('Ejercicio 5');
-    var texto = "";
-    for (i = 2; i < 202; i++){
-        if (i % 2 == 0)
-        texto = texto + i + "";
-    }
-    textopantalla.textContent = texto;
-});
+    btnColor.addEventListener('click', () => {
+        // Cambia a un color aleatorio o uno fijo
+        cajaColor.style.backgroundColor = cajaColor.style.backgroundColor === 'lightgreen' ? 'lightblue' : 'lightgreen';
+    });
 
-//EJERCICIO 6
-boton6.addEventListener('click', () => {
-    console.log('Ejercicio 6');
-    var numero =parseInt(prompt("Introduzca un número "));
-    var texto = "";
-    for (i=0; i <= numero; i++) {
-        texto = texto + i + "";
-    }
-    textopantalla.textContent = texto;
-});
 
-//EJERCICIO 7
-boton7.addEventListener('click', () => {
-    console.log('Ejercicio 7');
-    var nota = parseFloat(prompt("Introduzca la calificación"));
-    var resultado = "";
-
-    if (num >=0 && num < 3){
-        resultado = 'Muy Deficiente';
-    }else if (num >= 3 && num < 5){
-        resultado = 'Insuficiente';
-    }else if (num >= 5 && num < 6){
-        resultado = 'Bien';
-    }else if (num >= 6 && num < 9){
-        resultado = 'Notable';
-    }else {
-        resultado = 'Sobresaliente';
-    }
-    textopantalla.textContent = "Calificación: " + resultado;
-});
-
-//EJERCICIO 8
-boton8.addEventListener('click', () => {
-    console.log('Ejercicio 8');
-    var num = prompt("Introduce un número");
-    var factorial = 1;
-    for ( i=1; i <= num; i++ ){
-        factorial = factorial * i;
-    }
-    textopantalla.textContent = 'El factorial es: ' + factorial;
-});
-
-//EJERCICIO 9
-boton9.addEventListener('click', () => {
-    console.log('Ejercicio 9');
-    var horas = prompt("Introduce la hora");
-    var minutos = prompt("Introduce los minutos");
-    var segundos = prompt("Introduce los segundos");
-    if (segundos >=60){
-        segundos = 0;
-        minutos++;
-    }else if(minutos >= 60){
-        minutos = 0;
-        horas ++;
-    }else if(horas > 23){
-        horas=0;
-        minutos =0;
-        segundos=0;
-        }
-        textopantalla.textContent = 'La hora actualizada es ' + horas + ':' + minutos + ':' +segundos;
-});
-
-//EJERCICIO 10
-boton10.addEventListener('click', () => {
-    console.log('Ejercicio 10');
+    // --- 5 y 6. Eventos de ratón (Mouseover y Mouseout) ---
+    const zonaHover = document.getElementById('zonaHover');
     
-    let negativos = 0;
+    zonaHover.addEventListener('mouseover', () => {
+        zonaHover.textContent = "Dentro del área";
+        zonaHover.style.backgroundColor = "#ddd";
+    });
 
-    for (let i = 1; i <= 10; i++) {
-        // Convertimos la entrada a número directamente
-        let num = parseFloat(prompt(`Introduce el número ${i} de 10 (no nulo):`));
+    zonaHover.addEventListener('mouseout', () => {
+        zonaHover.textContent = "Fuera del área";
+        zonaHover.style.backgroundColor = "#eee";
+    });
 
-        // Verificamos si es negativo DENTRO del bucle
-        if (num < 0) {
-            negativos++;
-        }
-    }
-    // Mostramos el mensaje final según el contador
-    if (negativos > 0) {
-        textopantalla.textContent = `Se han leído ${negativos} números negativos.`;
-    } else {
-        textopantalla.textContent = 'No se ha leído ningún número negativo.';
-    }
-});
 
-//EJERCICIO 11
-boton11.addEventListener('click', () => {
-    console.log('Ejercicio 11');
+    // --- 7. Mostrar lo que escribe el usuario (Input) ---
+    const inputTexto = document.getElementById('texto');
+    const spanEco = document.getElementById('eco');
 
-    let positivos = 0;
-    let negativos = 0;
+    inputTexto.addEventListener('input', (event) => {
+        spanEco.textContent = event.target.value;
+    });
 
-    for (let i = 1; i <= 10; i++) {
-        let num = parseFloat(prompt(`Número ${i} de 10:`));
 
-        // Clasificación del número
-        if (num > 0) {
-            positivos++;
-        } else if (num < 0) {
-            negativos++;
-        } 
-        // Si el número es 0, simplemente no se cuenta en ninguna categoría
-    }
+    // --- 8. Confirmar cambio (Change) ---
+    const inputConfirm = document.getElementById('textoConfirm');
+    const confirmMsg = document.getElementById('confirmMsg');
 
-    // Resultado por pantalla
-    textopantalla.textContent = `Resultado: ${positivos} positivos y ${negativos} negativos.`;
-});
+    inputConfirm.addEventListener('change', () => {
+        confirmMsg.textContent = "Valor confirmado: " + inputConfirm.value;
+    });
 
-//EJERCICIO 12
-boton12.addEventListener('click', () => {
-    console.log('Ejercicio 12');
 
-    let positivos = 0;
-    let negativos = 0;
-    let num;
+    // --- 9. Detectar pulsación de tecla ---
+    const teclaMsg = document.getElementById('teclaMsg');
 
-    // Usamos do-while para asegurarnos de que entre al menos una vez al bucle
-    do {
-        num = parseFloat(prompt("Introduce un número (0 para terminar):"));
+    document.addEventListener('keydown', (event) => {
+        teclaMsg.textContent = `Tecla pulsada: ${event.key} (Código: ${event.code})`;
+    });
 
-        if (num > 0) {
-            positivos++;
-        } else if (num < 0) {
-            negativos++;
-        }
 
-    } while (num !== 0); // El bucle se repite mientras el número NO sea 0
+    // --- 10. Ejercicio mixto (Activar botón) ---
+    const btnBloqueado = document.getElementById('btnBloqueado');
+    const bloqueadoMsg = document.getElementById('bloqueadoMsg');
 
-    // Determinamos si hubo algún negativo (booleano)
-    let huboNegativos = negativos > 0 ? "Sí" : "No";
+    // Estado inicial
+    btnBloqueado.disabled = true;
 
-    // Mostramos el resultado final
-    textopantalla.textContent = `¿Hubo negativos?: ${huboNegativos}. 
-        Total positivos: ${positivos}. 
-        Total negativos: ${negativos}.`;
-});
+    btnBloqueado.addEventListener('mouseover', () => {
+        btnBloqueado.disabled = false;
+        btnBloqueado.textContent = "¡Haz clic ahora!";
+    });
 
-//EJERCICIO 13
-boton13.addEventListener('click', () => {
-    console.log('Ejercicio 13');
+    btnBloqueado.addEventListener('click', () => {
+        bloqueadoMsg.textContent = "¡Botón activado y pulsado con éxito!";
+    });
 
-    let suma = 0;
-    let producto = 1;
-
-    // Los primeros 10 números naturales son del 1 al 10
-    for (let i = 1; i <= 10; i++) {
-        suma += i;       // Equivale a: suma = suma + i
-        producto *= i;   // Equivale a: producto = producto * i
-    }
-
-    // Mostramos los resultados
-    textopantalla.textContent = `La suma es: ${suma} y el producto es: ${producto}`;
-    
-    console.log("Resultado final -> Suma:", suma, "Producto:", producto);
-});
-
-//EJERCICIO 14
-
-botonSalario.addEventListener('click', () => {
-        console.log('Ejercicio 14');
-    // 1. Recogida de datos
-    const nombre = prompt("Introduce el nombre del trabajador:");
-    const horas = parseFloat(prompt("Horas trabajadas esta semana:"));
-    const tarifa = parseFloat(prompt("Tarifa por hora normal (€):"));
-
-    let salarioBruto = 0;
-    let tasas = 0;
-
-    // 2. Cálculo del Salario Bruto
-    if (horas <= 35) {
-        salarioBruto = horas * tarifa;
-    } else {
-        const horasExtra = horas - 35;
-        salarioBruto = (35 * tarifa) + (horasExtra * tarifa * 1.5);
-    }
-
-    // 3. Cálculo de Tasas (Impuestos Progresivos)
-    if (salarioBruto <= 500) {
-        tasas = 0;
-    } else if (salarioBruto <= 900) {
-        // Los primeros 500 libres, el resto al 25%
-        tasas = (salarioBruto - 500) * 0.25;
-    } else {
-        // Los primeros 500 libres
-        // Los siguientes 400 al 25% (400 * 0.25 = 100€)
-        // El resto al 45%
-        const tramo2 = 400 * 0.25;
-        const tramo3 = (salarioBruto - 900) * 0.45;
-        tasas = tramo2 + tramo3;
-    }
-
-    // 4. Cálculo del Salario Neto
-    const salarioNeto = salarioBruto - tasas;
-
-    // 5. Mostrar resultados
-    textopantalla.innerHTML = `
-        <strong>Resultados para:</strong> ${nombre}<br>
-        <strong>Salario Bruto:</strong> ${salarioBruto.toFixed(2)}€<br>
-        <strong>Tasas:</strong> ${tasas.toFixed(2)}€<br>
-        <strong>Salario Neto:</strong> ${salarioNeto.toFixed(2)}€
-    `;
 });
