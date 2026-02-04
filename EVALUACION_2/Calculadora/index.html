@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculadora con Funciones</title>
+ 
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+ 
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Calculadora con funciones</h1>
+      <p>Introduce dos números y elige una operación.</p>
+    </header>
+ 
+    <section class="calc">
+      <div class="calc__inputs">
+        <div class="field">
+          <label for="num1">Número 1</label>
+          <input id="num1" type="number" placeholder="Ej: 10" />
+        </div>
+ 
+        <div class="field">
+          <label for="num2">Número 2</label>
+          <input id="num2" type="number" placeholder="Ej: 5" />
+        </div>
+      </div>
+ 
+      <div class="calc__buttons">
+        <button id="btnSumar" class="btn">Sumar (+)</button>
+        <button id="btnRestar" class="btn">Restar (−)</button>
+        <button id="btnMultiplicar" class="btn">Multiplicar (×)</button>
+        <button id="btnDividir" class="btn">Dividir (÷)</button>
+        <button id="btnLimpiar" class="btn btn--ghost">Limpiar</button>
+      </div>
+ 
+      <div class="calc__result">
+        <h2>Resultado</h2>
+        <p id="resultado" class="result__value">—</p>
+        <p id="mensaje" class="result__msg"></p>
+      </div>
+    </section>
+ 
+    <footer class="app__footer">
+      <small>DAW · JavaScript · Funciones</small>
+    </footer>
+  </main>
+</body>
+</html>
