@@ -93,13 +93,18 @@ function ejecutarOperacion(operacion){
     const n2= datos.n2;
 
     
-    const resultado = operacion(n1, n2);
+    let resultado = operacion(n1, n2);
     //Si la operación devuelve null (error)
     if (resultado === null){
 
         mostrarSalida("-", "No se puede realizar esta operación");
 
         return;
+    }
+
+    // Comprobamos si el número tiene decimales
+    if (resultado % 1 !== 0) {
+        resultado = resultado.toFixed(2);
     }
 
     //SI todo ha ido bien
@@ -134,6 +139,17 @@ btnDividir.addEventListener("click", function (){
     ejecutarOperacion(dividir);
 });
 
+// BOTÓN POTENCIA
+btnPotencia.addEventListener("click", function () {
+    ejecutarOperacion(potencia);
+});
+
+// BOTÓN MÓDULO
+btnModulo.addEventListener("click", function () {
+    ejecutarOperacion(modulo);
+});
+
+
 //PASO 7: BOTÓN LIMPIAR
 
 btnLimpiar.addEventListener("click", function (){
@@ -151,3 +167,23 @@ btnLimpiar.addEventListener("click", function (){
 
     //PASO 8
     mostrarSalida("-", "Introduce dos números y selecciona una operación.");
+
+    /*AÑADIR:
+Redondeo: si el resultado tiene muchos decimales, mostrar solo 2:
+Pista: resultado.toFixed(2)
+Añadir potencia:
+a ** b
+Añadir módulo:
+a % b*/
+// Función potencia
+function potencia(a, b) {
+    return a ** b;
+}
+
+// Función módulo (resto de la división)
+function modulo(a, b) {
+    if (b === 0) return null;
+    return a % b;
+}
+
+
