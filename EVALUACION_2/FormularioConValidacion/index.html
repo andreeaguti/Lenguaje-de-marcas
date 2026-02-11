@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario por campos (validación con funciones)</title>
+
+  <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+ 
+  <!-- Más adelante enlazarán su JS aquí:
+  <script src="js/app.js" defer></script>
+  -->
+</head>
+
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true"></div>
+        <div>
+          <h1>Registro de Usuario</h1>
+          <p>Actividad: validación por campos usando funciones JavaScript.</p>
+        </div>
+      </div>
+
+      <div class="status" id="estadoGeneral" role="status" aria-live="polite">
+        <strong>Estado:</strong> <span id="estadoTexto">Pendiente de validación</span>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2 class="card__title">Datos personales</h2>
+
+      <form id="formRegistro" class="form" novalidate>
+        <!-- FILA 1 -->
+        <div class="grid grid--2">
+          <div class="field">
+            <label for="nombre">Nombre *</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ej: Pablo" autocomplete="given-name" />
+            <small class="hint">Entre 2 y 30 caracteres. Solo letras y espacios.</small>
+            <p class="error" id="errorNombre" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="apellidos">Apellidos *</label>
+            <input id="apellidos" name="apellidos" type="text" placeholder="Ej: García López" autocomplete="family-name" />
+            <small class="hint">Entre 2 y 60 caracteres.</small>
+            <p class="error" id="errorApellidos" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- FILA 2 -->
+        <div class="grid grid--2">
+          <div class="field">
+            <label for="email">Correo electrónico *</label>
+            <input id="email" name="email" type="email" placeholder="Ej: usuario@correo.com" autocomplete="email" />
+            <small class="hint">Debe tener formato válido: nombre@dominio.ext</small>
+            <p class="error" id="errorEmail" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono *</label>
+            <input id="telefono" name="telefono" type="tel" placeholder="Ej: 612345678" autocomplete="tel" />
+            <small class="hint">9 dígitos (solo números).</small>
+            <p class="error" id="errorTelefono" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- FILA 3 -->
+        <div class="grid grid--2">
+          <div class="field">
+            <label for="fechaNacimiento">Fecha de nacimiento *</label>
+            <input id="fechaNacimiento" name="fechaNacimiento" type="date" />
+            <small class="hint">Debes ser mayor de edad (>= 18).</small>
+            <p class="error" id="errorFecha" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="provincia">Provincia *</label>
+            <select id="provincia" name="provincia">
+              <option value="">— Selecciona —</option>
+              <option>Cantabria</option>
+              <option>Asturias</option>
+              <option>Bizkaia</option>
+              <option>Burgos</option>
+              <option>Madrid</option>
+              <option>Otra</option>
+            </select>
+            <small class="hint">Selecciona una opción.</small>
+            <p class="error" id="errorProvincia" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- BLOQUE CONTRASEÑAS -->
+        <div class="divider"></div>
+        <h2 class="card__title">Seguridad</h2>
+
+        <div class="grid grid--2">
+          <div class="field">
+            <label for="password">Contraseña *</label>
+            <input id="password" name="password" type="password" placeholder="Mín. 8 caracteres" autocomplete="new-password" />
+            <small class="hint">Mínimo 8: mayúscula, minúscula, número y símbolo.</small>
+            <p class="error" id="errorPassword" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="password2">Repetir contraseña *</label>
+            <input id="password2" name="password2" type="password" placeholder="Repite la contraseña" autocomplete="new-password" />
+            <small class="hint">Debe coincidir con la contraseña.</small>
+            <p class="error" id="errorPassword2" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- OBSERVACIONES -->
+        <div class="field">
+          <label for="observaciones">Observaciones (opcional)</label>
+          <textarea id="observaciones" name="observaciones" rows="4" placeholder="Escribe aquí…"></textarea>
+          <small class="hint">Máximo 200 caracteres.</small>
+          <p class="error" id="errorObs" aria-live="polite"></p>
+        </div>
+
+        <!-- CHECKS -->
+        <div class="grid grid--2">
+          <div class="field field--check">
+            <input id="newsletter" name="newsletter" type="checkbox" />
+            <label for="newsletter">Quiero recibir novedades (opcional)</label>
+          </div>
+
+          <div class="field field--check">
+            <input id="terminos" name="terminos" type="checkbox" />
+            <label for="terminos">Acepto términos y condiciones *</label>
+            <p class="error" id="errorTerminos" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- RESUMEN -->
+        <div class="summary" id="resumen" aria-live="polite">
+          <h3>Resumen de validación</h3>
+          <ul id="listaErrores">
+            <li>—</li>
+          </ul>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="actions">
+          <button type="submit" class="btn btn--primary" id="btnEnviar">
+            Enviar registro
+          </button>
+          <button type="reset" class="btn btn--ghost" id="btnReset">
+            Reset
+          </button>
+        </div>
+
+        <p class="footnote">
+          Los campos marcados con * son obligatorios.
+        </p>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -117,7 +117,6 @@ function ejecutarOperacion(operacion){
 btnSumar.addEventListener("click", function (){
 
     ejecutarOperacion(sumar);
-
 });
 
 //BOTÓN RESTAR
@@ -135,7 +134,6 @@ btnMultiplicar.addEventListener("click", function (){
 
 //BOTÓN SUMAR
 btnDividir.addEventListener("click", function (){
-
     ejecutarOperacion(dividir);
 });
 
