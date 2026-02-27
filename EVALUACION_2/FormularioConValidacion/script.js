@@ -1,35 +1,45 @@
 // 1. CAPTURA DE ELEMENTOS DOM
+//HTML es un edificio y Java Script el administrador...
+//Lo capturas para añadirle un "escuchador" (addEventListener). Así, cuando el usuario intente enviar los datos, JavaScript puede detener el envío, revisar que todo esté bien y decidir si lo deja pasar o no.
 const form = document.getElementById('formRegistro');
 
-/*Estás creando una "conexión" entre tu código JavaScript y la etiqueta <form> de tu HTML que tiene el ID formRegistro. Esto te permitirá, más adelante, detectar cuándo el usuario intenta enviar el formulario para poder validarlo.*/
+//Si el usuario pone un teléfono de 5 dígitos, tú crearás un mensaje que diga "El teléfono debe tener 9 dígitos" y lo meterás dentro de esa listaErrores para que aparezca en pantalla
 const listaErrores = document.getElementById('listaErrores');
-/*Aquí capturas el elemento <ul> (lista desordenada) donde se mostrará el Resumen de validación. Gracias a esta constante, podrás añadir elementos <li> con los errores detectados de forma dinámica.*/
+
+//Capturas este elemento para que, cuando el usuario pulse el botón de enviar, JavaScript cambie ese texto a "Registro completado con éxito" (en verde) o "Errores en el formulario" (en rojo).
 const estadoTexto = document.getElementById('estadoTexto');
-//Con esta constante podré cambiar el texto a "Formulario correcto" o "Existen errores"
 
 
 // 2. FUNCIONES DE LECTURA (PUNTO 6)
+
+// Devuelve el valor limpio (sin espacios) de un input de texto.
 const leerCampoTexto = (id) => document.getElementById(id).value.trim();
-// Devuelve el valor limpio (sin espacios) de un input de texto. 
-const leerCheckbox = (id) => document.getElementById(id).checked; 
+
 // Devuelve true o false según esté marcado.
-const leerSelect = (id) => document.getElementById(id).value; 
+const leerCheckbox = (id) => document.getElementById(id).checked; 
+
 //Devuelve el valor seleccionado.
+const leerSelect = (id) => document.getElementById(id).value; 
 
 
+// 3. FUNCIONES DE INTERFAZ
 function mostrarError(idError, mensaje){
     const pError = document.getElementById(idError);
-    pError.textContent = mensaje; 
+    if(pError) pError.textContent = mensaje; 
 }
 
 function limpiarError(idError){
-    document.getElementById(idError).textContent = "";
+    const pError = document.getElementById(idError);
+    if(pError) pError.textContent = "";
 }
+
 function actualizarEstadoGeneral(texto, correcto){
     estadoTexto.textContent = texto; 
     const panelEstado = document.getElementById('estadoGeneral');
-    panelEstado.style.backgroundColor = correcto ? "#e6fffa" : "#fff1f0";
-    panelEstado.style.borderColor = correcto ? "#38a169" : "#e53e3e";
+    if(panelEstado) {
+        panelEstado.style.backgroundColor = correcto ? "#e6fffa" : "#fff1f0";
+        panelEstado.style.borderColor = correcto ? "#38a169" : "#e53e3e";
+    }
 }
 
 
@@ -37,7 +47,7 @@ function actualizarEstadoGeneral(texto, correcto){
 function validarNombre() {
     const valor = leerCampoTexto('nombre');
     const regex = /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/;
-    // Entre 2 y 30 caracteres, solo letras y espacios 
+    // Entre 2 y 30 caracteres, solo letras y espacios
     if (valor.length < 2 || valor.length > 30 || !regex.test(valor)) {
         mostrarError('errorNombre', "Nombre no válido (2-30 caracteres, solo letras).");
         return false;
@@ -46,36 +56,34 @@ function validarNombre() {
     return true;
 }
 
-function validarApellido() {
-    const valor = leerCampoTexto('apellido');
-    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s'-]{2,60}$/; //Patrón que tiene que seguir el apellido
-    // Si lo que se introduce es menor a dos o mayor a 30 o no cumple con el regex, muestra mensaje de error
+function validarApellidos() { // Corregido a plural según el PDF
+    const valor = leerCampoTexto('apellidos');
+    const regex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/; //Patrón que tiene que seguir el apellido
+    // Si lo que se introduce es menor a dos o mayor a 60 o no cumple con el regex, muestra mensaje de error
     if (valor.length < 2 || valor.length > 60 || !regex.test(valor)) {
-        mostrarError('errorApellido', "Apellido no válido (2-60 caracteres, solo letras).");
+        mostrarError('errorApellidos', "Apellido no válido (2-60 caracteres, solo letras).");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorApellido');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorApellidos');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
     return true;
 }
 
 function validarEmail() {
     const valor = leerCampoTexto('email');
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //Patrón que tiene que seguir el email
-    // Si lo que se introduce es menor a cinco o mayor a 30 o no cumple con el regex, muestra mensaje de error
-    if (valor.length < 5 || valor.length > 50 || !regex.test(valor)) {
+    if (!regex.test(valor)) {
         mostrarError('errorEmail', "Email no válido (Ej: usuario@dominio.com).");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorEmail');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorEmail');
     return true;
 }
 
 function validarTelefono() {
     const valor = leerCampoTexto('telefono');
-    const regex = /^[6789]\d{8}$/; //Patrón que tiene que seguir el numero de telefono
-    // Si lo que se introduce es menor o mayor a 9 o no cumple con el regex, muestra mensaje de error
-    if (valor.length < 9 || valor.length > 9 || !regex.test(valor)) {
-        mostrarError('errorTelefono', "Telefono no válido (Ej: 665925763).");
+    const regex = /^\d{9}$/; //Patrón que tiene que seguir el numero de telefono: exactamente 9 dígitos
+    if (!regex.test(valor)) {
+        mostrarError('errorTelefono', "Telefono no válido (Deben ser exactamente 9 números).");
         return false; //Si da error, termina el programa
     }
     limpiarError('errorTelefono');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
@@ -83,39 +91,50 @@ function validarTelefono() {
 }
 
 function validarFecha() {
-    const valor = leerCampoTexto('fecha');
-    const regex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/\d{4}$/; //Patrón que tiene que seguir la fecha
-    // Si lo que se introduce no cumple con el regex, muestra mensaje de error
-    if (valor < 18) {
-        mostrarError('errorFecha', "Fecha no válida, eres menor de edad!! (Ej: 01/03/2026).");
+    const valor = leerCampoTexto('fechaNacimiento'); // Asegúrate que el ID coincida con tu HTML
+    if (!valor) {
+        mostrarError('errorFecha', "La fecha de nacimiento es obligatoria."); // Añadido mensaje
+        return false;
+    }
+
+    // Lógica para calcular si es mayor de 18 años
+    const fechaNacimiento = new Date(valor);
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimiento.getMonth();
+    
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+        edad--;
+    }
+
+    if (edad < 18) {
+        mostrarError('errorFecha', "Fecha no válida, ¡debes ser mayor de edad!");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorFecha');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorFecha');
     return true;
 }
 
 function validarProvincia() {
-    const valor = leerCampoTexto('provincia');
-    const regex = /^[a-zA-ZÁÉÍÓÚáéíóúñÑ\s]+$/; //Patrón que tiene que seguir el nombre de la provincia
-    // Si lo que se introduce no cumple con el regex, muestra mensaje de error
-    if (valor.trim() === "" || !regex.test(valor)) {
-        mostrarError('errorProvincia', "Provincia no puede estar vacía y debe cumplir con el regex");
+    const valor = leerSelect('provincia');
+    // La provincia no puede estar vacía
+    if (valor === "") {
+        mostrarError('errorProvincia', "Provincia no puede estar vacía.");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorProvincia');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorProvincia');
     return true;
 }
 
 function validarPassword() {
     const valor = leerCampoTexto('password');
-    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,15}$/; 
-    //Patrón que tiene que seguir el nombre de la provincia
-    // Si lo que se introduce no cumple con el regex, muestra mensaje de error
-    if (valor.length < 8 || valor.length > 15 || !regex.test(valor)) {
-        mostrarError('errorPassword', "Contraseña no válida.");
+    // Mínimo 8 caracteres, 1 mayús, 1 minús, 1 número y 1 símbolo
+    const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/; 
+    if (!regex.test(valor)) {
+        mostrarError('errorPassword', "Contraseña no válida (mínimo 8 caracteres, mayúscula, minúscula, número y símbolo).");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorContrasena');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorPassword');
     return true;
 }
 
@@ -123,123 +142,130 @@ function validarPassword2() {
     const valor = leerCampoTexto('password');
     const valor2 = leerCampoTexto('password2');
     
-    if (contraseña1 !== contraseña2) {
-        mostrarError('errorPassword', "Las contraseñas no coinciden");
+    // Debe coincidir con la contraseña
+    if (valor !== valor2 || valor2 === "") {
+        mostrarError('errorPassword2', "Las contraseñas no coinciden");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorContrasena');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorPassword2');
     return true;
 }
 
 function validarObservaciones() {
     const valor = leerCampoTexto('observaciones');
-    
-    //Patrón que tiene que seguir el nombre de la provincia
-    // Si lo que se introduce no cumple con el regex, muestra mensaje de error
-    if (valor.length < 1 || valor.length > 200) {
-        mostrarError('errorObservaciones', "Observación no válida, tiene que tener menos de 200 carácteres");
+    // Regla: Máximo 200 caracteres (es opcional)
+    if (valor.length > 200) {
+        mostrarError('errorObs', "Observación no válida, máximo 200 carácteres.");
         return false; //Si da error, termina el programa
     }
-    limpiarError('errorContrasena');//si el código llega aquí, significa que el apellido es correcto, se borra el mensaje de error.
+    limpiarError('errorObs');
     return true;
 }
 
 function validarTerminos() {
     // el elemento (el checkbox), no su texto
-    const elemento = document.getElementById('terminos');
+    const marcado = leerCheckbox('terminos');
 
     // 2. Comprobamos si NO está marcado (usando el signo !)
-    if (!elemento.checked) {
-        mostrarError('errorTerminos', "Debes aceptar los términos y condiciones para continuar.");
+    if (!marcado) {
+        mostrarError('errorTerminos', "Debes aceptar los términos y condiciones.");
         return false;
     }
     limpiarError('errorTerminos');
     return true;
 }
 
-function validarFormulario() {
-    
-    const v1 = validarNombre();
-    const v2 = validarApellidos();
-    const v3 = validarEmail();
-    const v4 = validarTelefono();
-    const v5 = validarFecha(); 
-    const v6 = validarProvincia();
-    const v7 = validarPassword();
-    const v8 = validarPassword2();
-    const v9 = validarObservaciones();
-    const v10 = validarTerminos();
+function limpiarFormulario() {
+    // Limpiamos mensajes individuales
+    const mensajes = document.querySelectorAll('.error');
+    mensajes.forEach(msg => msg.textContent = "");
 
-    // El formulario es válido solo si todas son true
-    const esValido = v1 && v2 && v3 && v4 && v5 && v6 && v7 && v8 && v9 && v10;
+    // Limpiamos el resumen y estado
+    listaErrores.innerHTML = "<li>—</li>";
+    actualizarEstadoGeneral("Pendiente de validación", true);
+    
+    const panelEstado = document.getElementById('estadoGeneral');
+    if(panelEstado) {
+        panelEstado.style.backgroundColor = "";
+        panelEstado.style.borderColor = "";
+    }
+    console.log("Formulario limpiado.");
+}
+
+
+// 5. FUNCIONES GENERALES
+function validarFormulario() {
+    // Ejecutamos todas y guardamos resultados
+    const resultados = {
+        nombre: validarNombre(),
+        apellidos: validarApellidos(),
+        email: validarEmail(),
+        telefono: validarTelefono(),
+        fecha: validarFecha(),
+        provincia: validarProvincia(),
+        pass: validarPassword(),
+        pass2: validarPassword2(),
+        obs: validarObservaciones(),
+        terms: validarTerminos()
+    };
+
+    // Verificamos si hay algún false
+    const esValido = Object.values(resultados).every(val => val === true);
 
     if (esValido) {
-        actualizarEstadoGeneral("Formulario correcto. Enviando...", true);
-        generarResumenErrores([]); // Vaciar resumen si todo está bien
+        actualizarEstadoGeneral("¡Formulario correcto! Enviando...", true);
+        listaErrores.innerHTML = "<li>Ningún error detectado</li>";
     } else {
         actualizarEstadoGeneral("Hay errores en el formulario.", false);
-        generarResumenErrores(); // Llamar para mostrar la lista de fallos
+        generarResumenErrores(resultados); // Pasamos los resultados para no re-validar
     }
     return esValido;
 }
 
-function generarResumenErrores() {
-    // 1. Limpiamos la lista visual antes de empezar
+function generarResumenErrores(resultados) {
     listaErrores.innerHTML = ""; 
     
-    // 2. Array para recolectar los mensajes amigables
-    const mensajesDeError = [];
-    
-    // 3. Ejecutamos validaciones y si fallan, añadimos mensaje al array
-    if (!validarNombre()) mensajesDeError.push("Nombre: Debe tener entre 2 y 30 letras.");
-    if (!validarApellido()) mensajesDeError.push("Apellidos: Debe tener entre 2 y 60 letras.");
-    if (!validarEmail()) mensajesDeError.push("Email: El formato no es válido.");
-    if (!validarTelefono()) mensajesDeError.push("Teléfono: Deben ser 9 dígitos numéricos.");
-    if (!validarFecha()) mensajesDeError.push("Fecha: Debes ser mayor de 18 años.");
-    if (!validarProvincia()) mensajesDeError.push("Provincia: Selecciona una provincia válida.");
-    if (!validarPassword()) mensajesDeError.push("Contraseña: No cumple los requisitos de seguridad.");
-    if (!validarPassword2()) mensajesDeError.push("Contraseña 2: No coincide con la primera.");
-    if (!validarObservaciones()) mensajesDeError.push("Observaciones: Máximo 200 caracteres.");
-    if (!validarTerminos()) mensajesDeError.push("Términos: Es obligatorio aceptarlos.");
+    const dicErrores = {
+        nombre: "Nombre: Entre 2 y 30 letras.",
+        apellidos: "Apellidos: Entre 2 y 60 letras.",
+        email: "Email: Formato usuario@dominio.ext.",
+        telefono: "Teléfono: Exactamente 9 dígitos.",
+        fecha: "Fecha: Debes ser mayor de 18 años.",
+        provincia: "Provincia: No puede estar vacía.",
+        pass: "Seguridad: La contraseña no cumple los requisitos.",
+        pass2: "Contraseña: Las claves no coinciden.",
+        obs: "Observaciones: Máximo 200 caracteres.",
+        terms: "Términos: Debes aceptar las condiciones."
+    };
 
-    //Si hay errores, los inyectamos en el HTML
-    if (mensajesDeError.length > 0) {
-        mensajesDeError.forEach(msg => {
+    // Solo añadimos al resumen los que han fallado (false)
+    for (const [campo, esCorrecto] of Object.entries(resultados)) {
+        if (!esCorrecto) {
             const li = document.createElement('li');
-            li.textContent = msg;
+            li.textContent = dicErrores[campo];
             listaErrores.appendChild(li);
-        });
+        }
     }
-
-
-   
-form.addEventListener('submit', function(event) {
-    
-    const esValido = validarFormulario();
-
-    // Si NO es válido, cancelo el envío
-    if (!esValido) {
-        console.warn("Envío bloqueado: revisa los errores en el formulario.");
-    } else {
-        console.log("¡Todo correcto! Enviando datos...");
-    }});
-
-   
-form.addEventListener('reset', function() {
-    // Limpiamos todos los mensajes de error individuales
-    // Buscamos todos los elementos cuyo ID empiece por "error"
-    const mensajes = document.querySelectorAll('[id^="error"]');
-    mensajes.forEach(msg => {
-        msg.textContent = "";
-    });
-
-    //Limpio el resumen de errores y el estado general
-    listaErrores.innerHTML = "";
-    actualizarEstadoGeneral("Formulario reiniciado", true);
-    
-    console.log("Interfaz limpiada correctamente.");
-});
 }
 
 
+// 6. GESTIÓN DE EVENTOS
+form.addEventListener('submit', function(event) {
+    // 1. Ejecutamos la validación general
+    const esValido = validarFormulario();
 
+    // 2. Si hay errores (esValido es false), cancelamos el envío real
+    if (!esValido) {
+        event.preventDefault(); // Esta línea es la que evita que el formulario se "reinicie" 
+        console.warn("Envío bloqueado: revisa los errores en el formulario.");
+    } else {
+        // Si todo está bien, podrías también usar event.preventDefault() 
+        // para ver el mensaje de "¡Formulario correcto!" sin que se borre.
+        event.preventDefault(); 
+        console.log("¡Todo correcto! Los datos están listos para enviarse.");
+    }
+});
+
+form.addEventListener('reset', function() {
+    limpiarFormulario();
+});
