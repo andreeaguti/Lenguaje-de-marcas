@@ -1,0 +1,96 @@
+/* Importamos una fuente más redondeada y moderna */
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+body {
+    font-family: 'Varela Round', sans-serif; /* Fuente más "amigable" */
+    /* Fondo con degradado alegre y suave */
+    background-color: #fdfbfb;
+    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco semi-transparente */
+    padding: 2.5rem;
+    border-radius: 24px; /* Bordes muy redondeados */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 650px;
+    width: 90%;
+    text-align: center;
+    border: 4px solid #fff; /* Borde blanco grueso estilo "pegatina" */
+}
+
+h1 {
+    /* Texto con degradado de rosa a naranja */
+    background: linear-gradient(to right, #ff0844 0%, #ffb199 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#pantalla-mensaje {
+    background-color: #f0f9ff; /* Azul muy clarito */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    border: 2px dashed #38bdf8; /* Borde discontinuo divertido */
+}
+
+#mensaje {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #0369a1; /* Azul oscuro para leer bien */
+    font-weight: 500;
+}
+
+/* Mantenemos la cuadrícula mágica */
+.contenedor-ejercicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+}
+
+button {
+    /* Color base: un lila brillante */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 0px #5a4293; /* Efecto 3D en la base */
+    text-transform: uppercase;
+    font-family: 'Varela Round', sans-serif;
+}
+
+/* Efecto al pasar el ratón: se vuelve más brillante y sube */
+button:hover {
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); /* Rosa/Lila pastel */
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0px #b19cd9;
+    color: #4a148c;
+}
+
+/* Efecto al pulsar: se hunde */
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0px #5a4293;
+}
+
+/* OPCIONAL: Si quieres que CADA botón tenga un color diferente al pasar el ratón,
+   puedes añadir esto (descoméntalo si te gusta): */
+/*
+.contenedor-ejercicios button:nth-child(4n+1):hover { background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%); color: #881e1e; box-shadow: 0 7px 0px #e08585;} 
+.contenedor-ejercicios button:nth-child(4n+2):hover { background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); color: #1e5e5e; box-shadow: 0 7px 0px #70c49a;} 
+.contenedor-ejercicios button:nth-child(4n+3):hover { background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%); color: #5e1e5e; box-shadow: 0 7px 0px #c196d0;} 
+*/
