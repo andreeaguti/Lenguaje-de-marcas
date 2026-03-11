@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket de la compra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Ticket de la compra</h1>
+        <p class="descripcion">
+            Introduce la cantidad de cada producto y pulsa en <strong>Generar ticket</strong>.
+        </p>
+
+        <form class="ticket-form">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio unitario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" value="Queso" readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="queso" placeholder="Cantidad">
+                        </td>
+                        <td>
+                            <input type="text" value="4.50 €" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="Jamón" readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="jamon" placeholder="Cantidad">
+                        </td>
+                        <td>
+                            <input type="text" value="6.75 €" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="Pollo" readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="pollo" placeholder="Cantidad">
+                        </td>
+                        <td>
+                            <input type="text" value="5.20 €" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="Pescado" readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="pescado" placeholder="Cantidad">
+                        </td>
+                        <td>
+                            <input type="text" value="8.10 €" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" value="Huevos" readonly>
+                        </td>
+                        <td>
+                            <input type="text" name="huevos" placeholder="Cantidad">
+                        </td>
+                        <td>
+                            <input type="text" value="2.40 €" readonly>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="acciones">
+                <button type="submit">Generar ticket</button>
+            </div>
+
+            <div class="resultado">
+                <p></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

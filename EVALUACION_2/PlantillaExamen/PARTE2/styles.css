@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f4f6f9, #dfe9f3);
+    color: #222;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 12px;
+    color: #1f3c88;
+}
+
+.descripcion {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 15px;
+}
+
+.ticket-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+.ticket-form th {
+    background-color: #1f3c88;
+    color: white;
+    padding: 14px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.ticket-form td {
+    border: 1px solid #dcdcdc;
+    padding: 12px;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.ticket-form tr:nth-child(even) td {
+    background-color: #f1f5fb;
+}
+
+.ticket-form input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #c7d0dd;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+}
+
+.ticket-form input[readonly] {
+    background-color: #e9eef6;
+    color: #333;
+    font-weight: bold;
+    border: 1px solid #c3cfdf;
+}
+
+.ticket-form input::placeholder {
+    color: #999;
+}
+
+.acciones {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.acciones button {
+    background-color: #1f3c88;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.acciones button:hover {
+    background-color: #16306d;
+    transform: translateY(-2px);
+}
+
+.resultado {
+    background-color: #f7f9fc;
+    border: 1px dashed #9fb3d1;
+    border-radius: 10px;
+    padding: 18px;
+    line-height: 1.8;
+    font-size: 15px;
+    color: #333;
+}
+
+.resultado p:first-child {
+    font-weight: bold;
+    color: #1f3c88;
+    font-size: 17px;
+}
