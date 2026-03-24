@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALumnos - Funciones en JavaScript</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="contenedor">
+    <section class="panel">
+      <header class="cabecera">
+        <h1>Lista de alumnos</h1>
+        <p>1 DAW</p>
+      </header>
+
+      <section class="zona-formulario">
+        <div class="grupo-input">
+          <label for="tarea">Nuevo alumno</label>
+          <input type="text" id="tarea" placeholder="Escriba un alumno...">
+        </div>
+
+        <div class="botones">
+          <button id="btnAgregar">Añadir alumno</button>
+          <button id="btnVaciar" class="secundario">Vaciar lista</button>
+        </div>
+      </section>
+
+      <section class="zona-info">
+        <div class="tarjeta-info">
+          <span class="etiqueta">Total</span>
+          <span id="totalTareas" class="valor">0</span>
+        </div>
+
+        <div class="tarjeta-info">
+          <span class="etiqueta">Presentes</span>
+          <span id="AlumnosPresente" class="valor">0</span>
+        </div>
+
+        <div class="tarjeta-info">
+          <span class="etiqueta">Ausentes</span>
+          <span id="AlumnosAusentes" class="valor">0</span>
+        </div>
+      </section>
+
+      <section class="zona-lista">
+        <h2>Alumnos</h2>
+        <ul id="listaTareas" class="lista-tareas">
+          <!-- Las tareas se añadirán con JavaScript -->
+        </ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
