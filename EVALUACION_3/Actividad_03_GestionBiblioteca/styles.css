@@ -1,0 +1,165 @@
+/* Paleta de colores combinada */
+:root {
+    --color-fondo: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    --primario: #2c3e50;         /* Azul oscuro para textos y bordes */
+    --acentuado: #3498db;       /* Azul brillante para botones */
+    --exito: #27ae60;           /* Verde para libros disponibles */
+    --alerta: #e67e22;          /* Naranja para prestados */
+    --blanco: #ffffff;
+    --gris-suave: #f8f9fa;
+    --texto: #34495e;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--color-fondo);
+    background-attachment: fixed;
+    color: var(--texto);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.panel {
+    background: var(--blanco);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-top: 8px solid var(--primario); /* Detalle de color superior */
+}
+
+/* Cabecera con fondo sutil */
+.cabecera {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: var(--gris-suave);
+    border-radius: 10px;
+}
+
+.cabecera h1 { 
+    margin: 0; 
+    color: var(--primario);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estadísticas con colores temáticos */
+.zona-info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.tarjeta-info {
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Combinación de colores en las tarjetas */
+.tarjeta-info:nth-child(1) { background-color: var(--primario); }
+.tarjeta-info:nth-child(2) { background-color: var(--exito); }
+.tarjeta-info:nth-child(3) { background-color: var(--alerta); }
+
+.etiqueta { display: block; font-size: 0.85rem; opacity: 0.9; }
+.valor { font-size: 1.6rem; font-weight: bold; }
+
+/* Formularios y Inputs */
+.zona-formulario {
+    background-color: var(--gris-suave);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.zona-formulario h2 { 
+    color: var(--primario); 
+    margin-top: 0;
+    border-left: 4px solid var(--acentuado);
+    padding-left: 10px;
+}
+
+.fila-inputs { display: flex; gap: 15px; }
+
+.grupo-input {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label { font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
+
+input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--acentuado);
+}
+
+/* Botones con transiciones */
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--acentuado);
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+button.secundario {
+    background-color: #95a5a6;
+}
+
+/* Listado de Libros */
+.grid-libros {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-libro {
+    background: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.tarjeta-libro h3 { margin: 0; color: var(--primario); }
+
+.estado {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.disponible { background: #e8f5e9; color: var(--exito); }
+.prestado { background: #fff3e0; color: var(--alerta); }
+
+/* Responsividad básica */
+@media (max-width: 600px) {
+    .fila-inputs, .zona-info { flex-direction: column; }
+}

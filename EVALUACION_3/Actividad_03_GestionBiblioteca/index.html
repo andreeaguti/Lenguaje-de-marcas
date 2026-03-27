@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica: Sistema de Gestión de Biblioteca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="panel">
+            <header class="cabecera">
+                <h1>Gestión de Biblioteca</h1>
+                <p>Gestión de Inventario y Préstamos</p>
+            </header>
+
+            <section class="zona-info">
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Total Libros</span>
+                    <span id="totalLibros" class="valor">0</span>
+                </div>
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Disponibles</span>
+                    <span id="librosDisponibles" class="valor">0</span>
+                </div>
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Prestados</span>
+                    <span id="librosPrestados" class="valor">0</span>
+                </div>
+            </section>
+
+            <section class="zona-formulario">
+                <h2>Registrar Nuevo Libro</h2>
+                <div class="fila-inputs">
+                    <div class="grupo-input">
+                        <label for="titulo">Título</label>
+                        <input type="text" id="titulo" placeholder="Ej: El Quijote">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="autor">Autor</label>
+                        <input type="text" id="autor" placeholder="Ej: Cervantes">
+                    </div>
+                </div>
+                <div class="fila-inputs">
+                    <div class="grupo-input">
+                        <label for="categoria">Categoría</label>
+                        <input type="text" id="categoria" placeholder="Ej: Novela">
+                    </div>
+                    <div class="grupo-input">
+                        <label for="isbn">ISBN</label>
+                        <input type="text" id="isbn" placeholder="Ej: 978-12345">
+                    </div>
+                </div>
+                <div class="botones">
+                    <button id="btnAgregar">Añadir al Inventario</button>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="zona-formulario">
+                <h2>Buscador</h2>
+                <div class="grupo-input">
+                    <input type="text" id="inputBusqueda" placeholder="Buscar por título, autor o categoría...">
+                </div>
+            </section>
+
+            <section class="zona-lista">
+                <h2>Catálogo de Libros</h2>
+                <div id="contenedorCatalogo" class="grid-libros">
+                    <p class="mensaje-vacio">No hay libros en el inventario.</p>
+                </div>
+            </section>
+        </section>
+
+        <section id="seccionPrestamo" class="panel prestamo-flotante" style="display: none;">
+            <header class="cabecera">
+                <h2>Realizar Préstamo</h2>
+                <p id="infoLibroPrestamo"></p>
+            </header>
+            <div class="zona-formulario">
+                <div class="grupo-input">
+                    <label for="nombreUsuario">Nombre del Lector</label>
+                    <input type="text" id="nombreUsuario" placeholder="Tu nombre completo">
+                </div>
+                <div class="botones">
+                    <button id="btnConfirmarPrestamo">Confirmar Préstamo</button>
+                    <button id="btnCancelarPrestamo" class="secundario">Cancelar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
