@@ -163,27 +163,3 @@ button.secundario {
 @media (max-width: 600px) {
     .fila-inputs, .zona-info { flex-direction: column; }
 }
-.libro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f8fafc;
-  border: 1px solid var(--input-border);
-  border-radius: 12px;
-  padding: 14px 16px;
-}
-.acciones-libro {
-  display: flex;
-  gap: 10px;
-}
-
-/* ESTADOS DE libro */
-.libro.prestado {
-  border-left: 6px solid var(--presente);
-  background-color: var(--presente-bg);
-}
-
-.libro.noPrestado {
-  border-left: 6px solid var(--ausente);
-  background-color: var(--ausente-bg);
-}
