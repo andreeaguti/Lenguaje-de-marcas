@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzería Express | Inicio de sesión</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="topbar">
+    <nav class="nav container">
+      <a class="brand" href="index.html" aria-label="Ir a inicio">
+        <img class="brand__logo" src="logo.jpg" alt="Logo" />
+        <span class="brand__text">Pizzería Express</span>
+      </a>
+
+      <div class="nav__links">
+        <a class="nav__link" href="carrito.html">Carrito</a>
+        <a class="nav__link nav__link--active" href="login.html" aria-current="page">Inicio de sesión</a>
+
+        <button
+          id="themeToggle"
+          class="toggle"
+          type="button"
+          aria-label="Cambiar a modo oscuro/claro"
+          aria-pressed="false"
+        >
+          <span class="toggle__track">
+            <span class="toggle__thumb"></span>
+          </span>
+          <span class="toggle__label">Modo</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <header class="panel__header">
+        <h1>Inicio de sesión</h1>
+        <p class="muted">Formulario listo para validar con JavaScript (campos obligatorios, feedback, etc.).</p>
+      </header>
+
+      <form class="form" action="#" method="post" novalidate>
+        <div class="form__row">
+          <label class="label" for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" placeholder="nombre@dominio.com" autocomplete="email" required />
+          <small class="hint">Ej.: validar formato y mostrar errores.</small>
+        </div>
+
+        <div class="form__row">
+          <label class="label" for="password">Contraseña</label>
+          <input class="input" type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" required />
+          <small class="hint">Ej.: longitud mínima, mayúsculas, etc. (según criterio).</small>
+        </div>
+
+        <div class="form__row form__row--inline">
+          <label class="checkbox">
+            <input type="checkbox" name="remember" />
+            <span>Recordarme</span>
+          </label>
+          <a class="link" href="#" aria-label="Recuperar contraseña">¿Olvidaste la contraseña?</a>
+        </div>
+
+        <div class="form__actions">
+          <button class="btn btn--primary" type="submit">Entrar</button>
+          <button class="btn btn--ghost" type="reset">Limpiar</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Pizzería Express · Examen Extraordinario</p>
+    </div>
+  </footer>
+</body>
+</html>

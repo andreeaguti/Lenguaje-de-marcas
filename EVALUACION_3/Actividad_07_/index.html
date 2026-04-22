@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzería Express | Catálogo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="topbar">
+    <nav class="nav container">
+      <a class="brand" href="index.html" aria-label="Ir a inicio">
+        <img class="brand__logo" src="logo.jpg" alt="Logo" />
+        <span class="brand__text">Pizzería Express</span>
+      </a>
+
+      <div class="nav__links">
+        <a class="nav__link" href="carrito.html">Carrito</a>
+        <a class="nav__link" href="login.html">Inicio de sesión</a>
+
+        <!-- Toggle (JS lo implementarán ellos) -->
+        <button
+          id="themeToggle"
+          class="toggle"
+          type="button"
+          aria-label="Cambiar a modo oscuro/claro"
+          aria-pressed="false"
+        >
+          <span class="toggle__track">
+            <span class="toggle__thumb"></span>
+          </span>
+          <span class="toggle__label">Modo</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <section class="hero">
+      <div class="hero__content">
+        <h1>Elige tu pizza</h1>
+      </div>
+      <div class="hero__badge" aria-hidden="true">
+        <span class="hero__badgeTitle">PROMO</span>
+        <span class="hero__badgeText">Código descuento en carrito</span>
+      </div>
+    </section>
+
+    <!-- GRID 4x3 -->
+    <section class="grid" aria-label="Listado de pizzas">
+      <!-- Card 01 -->
+      <article class="card" data-id="p01" data-name="Margarita Clásica" data-price="8.50">
+        <img class="card__img" src="pizza1.jpg" alt="Pizza Margarita Clásica" />
+        <div class="card__body">
+          <h3 class="card__title">Margarita Clásica</h3>
+          <p class="card__meta"><span class="price">8,50 €</span> · Tomate, mozzarella, albahaca</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 02 -->
+      <article class="card" data-id="p02" data-name="Pepperoni" data-price="8.90">
+        <img class="card__img" src="pizza2.jpg" alt="Pizza Pepperoni" />
+        <div class="card__body">
+          <h3 class="card__title">Pepperoni</h3>
+          <p class="card__meta"><span class="price">8,90 €</span> · Pepperoni, queso, tomate</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 03 -->
+      <article class="card" data-id="p03" data-name="Cuatro Quesos" data-price="9.10">
+        <img class="card__img" src="pizza3.jpg" alt="Pizza Cuatro Quesos" />
+        <div class="card__body">
+          <h3 class="card__title">Cuatro Quesos</h3>
+          <p class="card__meta"><span class="price">9,10 €</span> · Mezcla de quesos, tomate</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 04 -->
+      <article class="card" data-id="p04" data-name="Barbacoa" data-price="9.30">
+        <img class="card__img" src="pizza4.jpg" alt="Pizza Barbacoa" />
+        <div class="card__body">
+          <h3 class="card__title">Barbacoa</h3>
+          <p class="card__meta"><span class="price">9,30 €</span> · Salsa BBQ, pollo, cebolla</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 05 -->
+      <article class="card" data-id="p05" data-name="Hawaiana" data-price="8.80">
+        <img class="card__img" src="pizza5.avif" alt="Pizza Hawaiana" />
+        <div class="card__body">
+          <h3 class="card__title">Hawaiana</h3>
+          <p class="card__meta"><span class="price">8,80 €</span> · Jamón, piña, queso</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 06 -->
+      <article class="card" data-id="p06" data-name="Vegetal" data-price="8.70">
+        <img class="card__img" src="pizza6.avif" alt="Pizza Vegetal" />
+        <div class="card__body">
+          <h3 class="card__title">Vegetal</h3>
+          <p class="card__meta"><span class="price">8,70 €</span> · Pimiento, champiñón, cebolla</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 07 -->
+      <article class="card" data-id="p07" data-name="Carbonara" data-price="9.20">
+        <img class="card__img" src="pizza7.jpg" alt="Pizza Carbonara" />
+        <div class="card__body">
+          <h3 class="card__title">Carbonara</h3>
+          <p class="card__meta"><span class="price">9,20 €</span> · Salsa crema, bacon, champiñón</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 08 -->
+      <article class="card" data-id="p08" data-name="Diavola" data-price="9.40">
+        <img class="card__img" src="pizza8.avif" alt="Pizza Diavola" />
+        <div class="card__body">
+          <h3 class="card__title">Diavola</h3>
+          <p class="card__meta"><span class="price">9,40 €</span> · Picante, salami, queso</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 09 -->
+      <article class="card" data-id="p09" data-name="Pollo & Bacon" data-price="9.00">
+        <img class="card__img" src="pizza9.webp" alt="Pizza Pollo y Bacon" />
+        <div class="card__body">
+          <h3 class="card__title">Pollo &amp; Bacon</h3>
+          <p class="card__meta"><span class="price">9,00 €</span> · Pollo, bacon, queso</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 10 -->
+      <article class="card" data-id="p10" data-name="Atún & Cebolla" data-price="8.95">
+        <img class="card__img" src="pizza10.jpg" alt="Pizza Atún y Cebolla" />
+        <div class="card__body">
+          <h3 class="card__title">Atún &amp; Cebolla</h3>
+          <p class="card__meta"><span class="price">8,95 €</span> · Atún, cebolla, aceitunas</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 11 -->
+      <article class="card" data-id="p11" data-name="Mediterránea" data-price="9.15">
+        <img class="card__img" src="pizza11.avif" alt="Pizza Mediterránea" />
+        <div class="card__body">
+          <h3 class="card__title">Mediterránea</h3>
+          <p class="card__meta"><span class="price">9,15 €</span> · Tomate seco, aceituna, rúcula</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 12 -->
+      <article class="card" data-id="p12" data-name="Trufa & Champiñón" data-price="9.50">
+        <img class="card__img" src="pizza12.jpg" alt="Pizza Trufa y Champiñón" />
+        <div class="card__body">
+          <h3 class="card__title">Trufa &amp; Champiñón</h3>
+          <p class="card__meta"><span class="price">9,50 €</span> · Toque trufa, champiñón, queso</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" type="button" data-action="add">Añadir</button>
+            <button class="btn btn--ghost" type="button" data-action="remove">Eliminar</button>
+            <button class="btn btn--secondary" type="button" data-action="customize">Personalizar</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Pizzería Express · Examen Extraordinario</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

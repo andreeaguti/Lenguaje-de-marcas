@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pizzería Express | Carrito</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAV -->
+  <header class="topbar">
+    <nav class="nav container">
+      <a class="brand" href="index.html" aria-label="Ir a inicio">
+        <img class="brand__logo" src="logo.jpg" alt="Logo" />
+        <span class="brand__text">Pizzería Express</span>
+      </a>
+
+      <div class="nav__links">
+        <a class="nav__link nav__link--active" href="carrito.html" aria-current="page">Carrito</a>
+        <a class="nav__link" href="login.html">Inicio de sesión</a>
+
+        <button
+          id="themeToggle"
+          class="toggle"
+          type="button"
+          aria-label="Cambiar a modo oscuro/claro"
+          aria-pressed="false"
+        >
+          <span class="toggle__track">
+            <span class="toggle__thumb"></span>
+          </span>
+          <span class="toggle__label">Modo</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <header class="panel__header">
+        <h1>Carrito de la compra</h1>
+        <p class="muted">Estructura vacía para rellenar con JavaScript (lista, cantidades, total, descuento).</p>
+      </header>
+
+      <!-- DIV en blanco + lista vacía con campos -->
+      <div id="cartContainer" class="cart">
+        <div class="cart__head" role="row">
+          <span role="columnheader">Nombre de pizza</span>
+          <span role="columnheader">Precio</span>
+          <span role="columnheader">Cantidad</span>
+        </div>
+
+        <ul id="cartList" class="cart__list" aria-label="Lista del carrito">
+          <!-- JS añadirá <li class="cart__item">...</li> -->
+        </ul>
+
+        <div class="cart__total">
+          <span class="cart__totalLabel">Precio total:</span>
+          <strong id="totalPrice" class="cart__totalValue">0,00 €</strong>
+        </div>
+      </div>
+
+      <!-- Código de descuento -->
+      <form id="discountForm" class="discount" action="#" method="post">
+        <label class="label" for="discountCode">Código de descuento</label>
+        <div class="discount__row">
+          <input
+            class="input"
+            type="text"
+            id="discountCode"
+            name="discountCode"
+            placeholder="Introduce tu código (p.ej. PIZZA10)"
+          />
+          <button class="btn btn--primary" type="submit">Aplicar</button>
+        </div>
+        <small class="hint">Debes mostrar mensaje de validación y recalcular el total.</small>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© 2026 Pizzería Express · Examen Extraordinario</p>
+    </div>
+  </footer>
+</body>
+</html>
