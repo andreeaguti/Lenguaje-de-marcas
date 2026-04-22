@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica guiada - Lanzamiento de dado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <header class="cabecera">
+            <h1>Simulador de lanzamiento de dado</h1>
+            <p>
+                Pulsa el botón para lanzar el dado y mostrar el resultado con su imagen correspondiente.
+            </p>
+        </header>
+
+        <main class="zona-practica">
+            <section class="panel-control">
+                <h2>Acción</h2>
+                <button id="btnLanzar">Lanzar dado</button>
+            </section>
+
+            <section class="panel-resultado">
+                <h2>Resultado</h2>
+
+                <div id="resultado" class="caja-texto">
+                    Aquí aparecerá el resultado del dado...
+                </div>
+
+                <div class="caja-imagen">
+                    <img
+                        id="imagenResultado"
+                        src="Dados/1Cara.png"
+                        alt="Imagen del resultado del dado"
+                    >
+                </div>
+            </section>
+        </main>
+
+        <section class="panel-referencia">
+            <h2>Imágenes del dado</h2>
+
+            <div class="galeria-dados">
+                <div class="carta-dado">
+                    <img src="Dados/1Cara.png" alt="Cara 1 del dado">
+                    <span>Resultado 1</span>
+                </div>
+
+                <div class="carta-dado">
+                    <img src="Dados/2Cara.png" alt="Cara 2 del dado">
+                    <span>Resultado 2</span>
+                </div>
+
+                <div class="carta-dado">
+                    <img src="Dados/3Cara.png" alt="Cara 3 del dado">
+                    <span>Resultado 3</span>
+                </div>
+
+                <div class="carta-dado">
+                    <img src="Dados/4Cara.png" alt="Cara 4 del dado">
+                    <span>Resultado 4</span>
+                </div>
+
+                <div class="carta-dado">
+                    <img src="Dados/5Cara.png" alt="Cara 5 del dado">
+                    <span>Resultado 5</span>
+                </div>
+
+                <div class="carta-dado">
+                    <img src="Dados/6Cara.png" alt="Cara 6 del dado">
+                    <span>Resultado 6</span>
+                </div>
+            </div>
+        </section>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
