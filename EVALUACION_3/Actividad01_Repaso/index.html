@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermercado - Carrito de la Compra</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="panel">
+            <header class="cabecera">
+                <h1>Mi Carrito</h1>
+                <p>Grado Superior DAW</p>
+            </header>
+
+            <section class="zona-formulario">
+                <div class="grupo-input">
+                    <label for="producto">Producto</label>
+                    <input type="text" id="producto" placeholder="Ej: Leche">
+                </div>
+                <div class="grupo-input">
+                    <label for="precio">Precio (€)</label>
+                    <input type="number" id="precio" placeholder="0.00">
+                </div>
+                <div class="botones">
+                    <button id="btnAgregar">Añadir al carrito</button>
+                    <button id="btnVaciar" class="secundario">Vaciar Carrito</button>
+                </div>
+            </section>
+
+            <section class="zona-info">
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Total Productos</span>
+                    <span id="totalProductos" class="valor">0</span>
+                </div>
+                <div class="tarjeta-info">
+                    <span class="etiqueta">Coste Total</span>
+                    <span id="costeTotal" class="valor">0.00</span>€
+                </div>
+            </section>
+
+            <section class="zona-lista">
+                <h2>Productos en la cesta</h2>
+                <ul id="listaCompra" class="lista-tareas">
+                    </ul>
+            </section>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

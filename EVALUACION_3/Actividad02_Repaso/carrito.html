@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu Carrito - SuperMark</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <nav class="nav container">
+            <a class="brand" href="index.html">🛒 SuperMark</a>
+            <div class="nav__links">
+                <a class="nav__link" href="index.html">Volver a la tienda</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="panel">
+            <h1>Tu Carrito</h1>
+            
+            <div id="cartContainer" class="cart">
+                <div class="cart__head">
+                    <span>Producto</span>
+                    <span>Precio</span>
+                    <span>Cant.</span>
+                    <span>Acción</span>
+                </div>
+                <ul id="cartList" class="cart__list">
+                    </ul>
+                <div class="cart__total">
+                    <span>Total a pagar:</span>
+                    <strong id="totalPrice">0,00 €</strong>
+                </div>
+            </div>
+
+            <form id="discountForm" class="discount">
+                <label for="discountCode">¿Tienes un cupón?</label>
+                <div class="discount__row">
+                    <input type="text" id="discountCode" placeholder="Ej: SUPER10">
+                    <button class="btn btn--primary" type="submit">Aplicar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

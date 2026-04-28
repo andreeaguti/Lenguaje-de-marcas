@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermercado Online - Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <nav class="nav container">
+            <a class="brand" href="index.html">🛒 SuperMark</a>
+            <div class="nav__links">
+                <a class="nav__link" href="carrito.html">Ir al Carrito</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Productos Frescos</h1>
+        </section>
+
+        <section class="grid">
+            <article class="card" data-id="s01" data-name="Leche Entera" data-price="1.20">
+                <div class="card__body">
+                    <h3 class="card__title">Leche Entera</h3>
+                    <p class="card__meta"><span class="price">1,20 €</span> · 1 Litro</p>
+                    <button class="btn btn--primary" data-action="add">Añadir</button>
+                </div>
+            </article>
+
+            <article class="card" data-id="s02" data-name="Pack Huevos" data-price="2.50">
+                <div class="card__body">
+                    <h3 class="card__title">Pack Huevos</h3>
+                    <p class="card__meta"><span class="price">2,50 €</span> · 12 unidades</p>
+                    <button class="btn btn--primary" data-action="add">Añadir</button>
+                </div>
+            </article>
+
+            <article class="card" data-id="s03" data-name="Pan de Molde" data-price="1.85">
+                <div class="card__body">
+                    <h3 class="card__title">Pan de Molde</h3>
+                    <p class="card__meta"><span class="price">1,85 €</span> · Integral</p>
+                    <button class="btn btn--primary" data-action="add">Añadir</button>
+                </div>
+            </article>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
