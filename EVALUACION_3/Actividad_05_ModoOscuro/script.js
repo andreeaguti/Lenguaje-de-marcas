@@ -6,9 +6,9 @@ botonTema.addEventListener("click", () => {
     body.classList.toggle("oscuro");
 
     if (body.classList.contains("oscuro")){
-        botonTema.textContent = "Cambiar a modo claro";
+        botonTema.textContent = "Modo claro";
     }
     else{
-        botonTema.textContent = "Cambiar a modo oscuro";
+        botonTema.textContent = "Modo oscuro";
     }
 });

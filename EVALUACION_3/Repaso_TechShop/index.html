@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TechShop | Catálogo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+filterInput
+  <header class="topbar">
+    <nav class="nav container">
+      <a class="brand" href="index.html">
+        <span class="brand__text">TechShop 2026</span>
+      </a>
+      <div class="nav__links">
+        <a class="nav__link" href="carrito.html">Carrito</a>
+        <a class="nav__link" href="login.html">Login</a>
+        <button id="themeToggle" class="toggle" type="button">
+          <span class="toggle__label">Modo Oscuro</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="search-area">
+      <input type="text" id="filterInput" class="input" placeholder="Buscar periféricos por nombre...">
+    </section>
+
+    <section class="grid" id="productGrid">
+      <article class="card" data-id="t01" data-name="Teclado Mecánico RGB" data-price="55.00">
+        <div class="card__body">
+          <h3 class="card__title">Teclado Mecánico RGB</h3>
+          <p class="card__meta">55,00 € · Switches Blue</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" data-action="add">Añadir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="t02" data-name="Ratón Gaming" data-price="32.50">
+        <div class="card__body">
+          <h3 class="card__title">Ratón Gaming</h3>
+          <p class="card__meta">32,50 € · 16000 DPI</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" data-action="add">Añadir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="t03" data-name="Auriculares 7.1" data-price="45.00">
+        <div class="card__body">
+          <h3 class="card__title">Auriculares 7.1</h3>
+          <p class="card__meta">45,00 € · Cancelación ruido</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" data-action="add">Añadir</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-id="t04" data-name="Monitor 24'' 144Hz" data-price="159.00">
+        <div class="card__body">
+          <h3 class="card__title">Monitor 24'' 144Hz</h3>
+          <p class="card__meta">159,00 € · Panel IPS</p>
+          <div class="card__actions">
+            <button class="btn btn--primary" data-action="add">Añadir</button>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="scriptOscuro.js"></script>
+</body>
+</html>

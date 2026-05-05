@@ -13,7 +13,7 @@ let descuentoActivo = 0; // Porcentaje de descuento
 
 function anadirAlCarrito(id, nombre, precio) {
     // Buscamos si el producto ya está en el carrito
-    const existente = carrito.find(p => p.id === id);
+    const existente = id.find(p => p.id === id);
 
     if (existente) {
         existente.cantidad++;
