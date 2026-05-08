@@ -1,0 +1,259 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FUENTE */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-image: url("img/fondo.PNG");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #d62828, #f77f00);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+/* NAV */
+nav {
+    background-color: #1d1d1d;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 15px 25px;
+}
+
+nav ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f77f00;
+}
+
+/* TITULO */
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 28px;
+    color: #222;
+}
+
+/* GRID PRODUCTOS */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* EFECTO HOVER CARD */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+}
+
+/* IMAGEN */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* CONTENIDO */
+.card h3 {
+    margin: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    margin: 0 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* PRECIO */
+.precio {
+    display: block;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #d62828;
+}
+
+/* BOTÓN */
+.btn {
+    display: block;
+    margin: 0 15px 20px;
+    padding: 12px;
+    text-align: center;
+    background: linear-gradient(135deg, #d62828, #f77f00);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+/* HOVER BOTÓN */
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* FOOTER */
+footer {
+    background: #1d1d1d;
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ========================= */
+/* CARRITO */
+/* ========================= */
+
+.carrito {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.carrito h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ITEM CARRITO */
+.carrito-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.carrito-item:hover {
+    transform: scale(1.02);
+}
+
+/* IMAGEN CARRITO */
+.carrito-item img {
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+/* TEXTO */
+.carrito-item p {
+    flex: 1;
+    font-weight: 500;
+}
+
+/* PRECIO */
+.carrito-item span {
+    font-weight: bold;
+    color: #d62828;
+}
+
+/* TOTAL */
+.total {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .carrito-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .carrito-item img {
+        margin-bottom: 10px;
+    }
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.toggle-container {
+    position: absolute;
+    right: 20px;
+}
+
+#toggleModo {
+    background: none;
+    border: 2px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    --bg: #121212;
+  --text: #e5e5e5;
+}
+
+#toggleModo:hover {
+    background: rgb(116, 86, 86);
+    color: black;
+}
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Tu carrito</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Volver a la tienda</a></li>
+    </ul>
+</nav>
+
+<main class="carrito">
+<h2>Lista de productos</h2>
+    <div class="total">
+        <h3>Total: 0€</h3>
+        <a href="carrito.html" class="btn">Aplicar el Descuento del 25%</a>
+    </div>
+    
+    <!-- DIV en blanco + lista vacía con campos -->
+      <div id="cartContainer" class="cart">
+        <div class="cart__head" role="row">
+          <span role="columnheader">Nombre de Kebab
+
+          </span>
+          <span role="columnheader">Precio</span>
+          <span role="columnheader">Cantidad</span>
+        </div>
+
+        <ul id="cartList" class="cart__list" aria-label="Lista del carrito">
+          <li class="cart__item">
+            <!-- JS añadirá <li class="cart__item">...</li> -->
+        </ul>
+
+        <div class="cart__total">
+          <span class="cart__totalLabel">Precio total:</span>
+          <strong id="totalPrice" class="cart__totalValue">0,00 €</strong>
+        </div>
+      </div>
+
+      <!-- Código de descuento -->
+      <form id="discountForm" class="discount" action="#" method="post">
+        <label class="label" for="discountCode">Código de descuento</label>
+        <div class="discount__row">
+          <input
+            class="input"
+            type="text"
+            id="discountCode"
+            name="discountCode"
+            placeholder="Introduce tu código"
+          />
+          <button class="btn btn--primary" type="submit">Aplicar</button>
+        </div>
+        <small class="hint"> </small>
+      </form>
+    </section>
+
+</main>
+<script src="script.js"></script>
+<script src="scriptOscuro.js"></script>
+</body>
+</html>

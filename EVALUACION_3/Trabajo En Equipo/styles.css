@@ -1,0 +1,223 @@
+.juego {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+
+  padding: 40px;
+
+  background: radial-gradient(
+    circle at top,
+    #eaf3ff,
+    #dbeafe,
+    #f3f8ff
+  );
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  border-radius: 30px;
+  background: #f3f8ff;
+  border: 3px;
+  border-color: #93c5fd;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 30px rgba(54, 76, 175, 0.3);
+}
+
+.jugador_1,
+.jugador_2 {
+  width: 280px;
+  padding: 30px;
+  border-radius: 24px;
+  text-align: center;
+  background:#bddeff;
+  transition: all 0.35s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 12px 30px rgba(54, 76, 175, 0.3);
+}
+
+.jugador_activo {
+  background: linear-gradient(145deg, #93c5fd, #c2c3ff);
+  border: 1px solid rgba(96, 165, 250, 0.5);
+  box-shadow: dropShadow(three-pass-box, rgba(0,0,0,0.1), 5.0, 0.0, 0.0, 5.0);
+  transform: scale(1.04);
+}
+
+.ganador {
+  background: linear-gradient(
+    145deg,
+    rgba(73, 51, 199, 0.25),
+    rgba(16, 129, 185, 0.2)
+  );
+  border: 1px solid #637ba0;
+  box-shadow: 0 12px 30px rgba(54, 76, 175, 0.3);
+}
+
+.puntaje {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 20px 0;
+  color: #090c15;
+}
+
+.caja-actual {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.puntaje-actual {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+#dado {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 9rem;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: #cfe3ff;
+
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(54, 76, 175, 0.3);
+
+  transition: all 0.25s ease;
+}
+
+#dado:hover {
+ position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 9rem;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  background: #8fb1dc;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 30px rgba(54, 76, 175, 0.3);
+  transition: all 0.25s ease;
+}
+
+.dado-container{
+  display: flex;
+  flex-direction: column  ;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.dhidden {
+  display: none;
+}
+
+.controles {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.btn {
+  padding: 12px 18px;
+  background: #cfe3ff;
+  border: 1px solid #cfe3ff;
+  border-radius: 12px; 
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+  width: 160px;
+}
+
+.btn:hover {
+  background: #6793c5;
+  color: #0f172a;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+
+.instrucciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+  gap: 25px;
+  padding: 50px;
+  margin: 40px auto;
+  background: linear-gradient(145deg, #f3f8ff, #eaf3ff);
+  border-radius: 24px;
+  border: 2px solid #93c5fd;
+
+  box-shadow: 0 15px 40px rgba(54, 76, 175, 0.2);
+}
+
+.instrucciones h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+
+  font-size: 2rem;
+  font-weight: 800;
+  color: #162852;
+
+  margin-bottom: 10px;
+}
+
+.instrucciones .bloque {
+  background: #eff6ff;
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.instrucciones .bloque:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(54, 76, 175, 0.25);
+}
+
+.instrucciones .bloque h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #788fce;
+}
+
+.instrucciones .bloque p,
+.instrucciones .bloque ul {
+  color: #0f172a;
+  line-height: 1.6;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.instrucciones .bloque li {
+  margin-bottom: 8px;
+}

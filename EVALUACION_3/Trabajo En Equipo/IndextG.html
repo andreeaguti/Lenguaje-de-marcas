@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de dados - DAW 25/26</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="juego">
+        <section class="container">
+            <section class="jugador_1 jugador_activo">
+                <h2 class="name"> Jugador 1</h2>
+                <p class="puntaje"> 0 </p>
+                <div class="caja-actual">
+                    <p class="contador"> Contador</p>
+                    <p class="puntaje-actual" id="turno-actual-1">0</p>
+                </div>
+            </section>
+            <section class="dado-container">
+            <div id="dado" class="dHidden"></div>
+
+            <div class="controles">
+                <button class="btn bnt_nuevo">Nueva partida</button>
+                <button class="btn btn_lanzar">Lanzar dados</button>
+                <button class="btn btn_pasar">Pasar</button>
+            </div>
+            </section>
+
+            <section class="jugador_2">
+                <h2 class="name"> Jugador 2</h2>
+                <p class="puntaje"> 0 </p>
+                <div class="caja-actual">
+                    <p class="contador"> Contador</p>
+                    <p class="puntaje-actual" id="turno-actual-2">0</p>
+                </div>
+            </section>
+        </section>
+        <section class="instrucciones">
+            <h1>Instrucciones del juego de dados</h1>
+            <article class="bloque">
+                <h3>Objetivo</h3>
+                <p>Ser el primer jugador en llegar a 15 puntos o más.</p>
+            </article>
+            <article class="bloque">
+                <h3>Cómo jugar</h3>
+                <ul>
+                    <li>En tu turno puedes lanzar el dado o pasar.</li>
+                    <li>Si sacas un número del 2 al 6, se suma a tu turno.</li>
+                    <li>Si sacas un 1, pierdes el turno y todos los puntos acumulados.</li>
+                    <li>Cuando pulses “Pasar”, guardas los puntos en tu marcador.</li>
+                </ul>
+            </article>
+            <article class="bloque">
+                <h3>Condición de victoria</h3>
+                <p>Gana el primer jugador que llegue a 15 puntos o más.</p>
+            </article>
+        </section>
+
+    </main>
+
+    <script src="Scripts.js"></script>
+</body>
+
+</html>
