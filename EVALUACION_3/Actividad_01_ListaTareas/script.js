@@ -1,5 +1,5 @@
 // 1. CAPTURA DE ELEMENTOS DOM del HTML; se coge del html, donde ponga ID
-const inputLibro = document.getElementById("libro");
+const inputLibro = document.getElementById("tarea");
 const btnAgregar = document.getElementById("btnAgregar");
 const btnVaciar = document.getElementById("btnVaciar");
 const listaTareas = document.getElementById("listaTareas");

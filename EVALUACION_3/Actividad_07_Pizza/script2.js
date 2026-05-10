@@ -1,55 +1,55 @@
+//captura de elementos DOM
 const tarjetas = document.querySelectorAll(".card");
-
-const botonAnadir = document.querySelectorAll(".productos .btn");
-
 const listaVacia = document.getElementById("cartContainer");
-
 const listaCarrito = document.getElementById("cartList");
-
 const precioTotal = document.getElementById("totalPrice");
 const descuentoForm = document.getElementById("discountForm");
 const codigoDescuento = document.getElementById("discountCode");
 
+//para los botones usamos querySelectorAll y un "." antes de la palabra de html
+// Añadimos ".grid" delante para capturar SOLO las pizzas.
+
+const botonAnadir = document.querySelectorAll(".grid btn--primary");
+const botonEliminar = document.querySelectorAll(".grid btn--ghost");
+const botonPersonalizar = document.querySelectorAll(".grid btn--secondary");
+//Botón específico de descuento (Dentro del form), pongo esa interrogacion de momento 
 const botonAplicarDescuento= descuentoForm?.querySelector('button[type="submit"]');
 
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //NUEVO Y AÑADIDO
+let carrito = []; //Nuestro carrito de la compra vacio
 let descuentoAplicado = 0;
 
-function anadirAlCarrito(id, nombre, precio) {
-    const productoExistente = carrito.find(producto => producto.id === id);
- 
-    if (productoExistente) {
-        productoExistente.cantidad++;
-    }
-    else {
-        carrito.push({
-            id: id,
-            nombre: nombre,
-            precio: precio,
-            cantidad: 1
-        });
-    }
-    localStorage.setItem("carrito", JSON.stringify(carrito)); //NUEVO Y AÑADIDO
-    mostrarCarrito(); //NUEVO Y AÑADIDO
-};
+//FUNCIONES
+function agregarPizza(nuevaPizza) {
+    //ya existe la pizza en el carrito?
+    const existe = carrito.find(item =>item.id === nuevaPizza.id);
 
-tarjetas.forEach((tarjeta, index) => {
-    // Buscamos el botón dentro de la tarjeta (sea cual sea su clase o data)
-    const btn = tarjeta.querySelector(".btn");
- 
-    if (btn) {
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-            // Si no tienes data-attributes en el HTML, los sacamos del contenido:
-            const id = tarjeta.dataset.id || index + 1;
-            const nombre = tarjeta.dataset.name || tarjeta.querySelector("h3").textContent;
-            const precioTexto = tarjeta.dataset.price || tarjeta.querySelector(".precio").textContent;
-            const precio = parseFloat(precioTexto.replace("€", ""));
-     
-            anadirAlCarrito(id, nombre, precio);
-        });
+    if (existe){
+        existe.cantidad++;
+    } else{
+        carrito.push(nuevaPizza)
     }
+
+    pintarCarrito();
+}
+
+// Recorremos cada botón de añadir
+botonAnadir.forEach((boton, indice) => {
+    boton.addEventListener("click", () => {
+        // Obtenemos la tarjeta correspondiente a ese botón
+        const tarjeta = tarjetas[indice]; 
+        
+        const pizzaSeleccionada = {
+            id: tarjeta.dataset.id,
+            nombre: tarjeta.dataset.name,
+            precio: parseFloat(tarjeta.dataset.price),
+            cantidad: 1
+        };
+ 
+        // Usamos el nombre correcto de tu función: agregarPizza
+        agregarPizza(pizzaSeleccionada);
+        console.log("Añadida pizza: " + pizzaSeleccionada.nombre);
+    });
 });
 
 function mostrarCarrito() {
@@ -68,9 +68,8 @@ function mostrarCarrito() {
         `;
     });
  
-    const botonesEliminarCarrito = document.querySelectorAll(".btn-eliminar"); //NUEVO DE AQUÍ HACIA ABAJO
  
-    botonesEliminarCarrito.forEach(boton => {
+    botonEliminar.forEach(boton => {
         boton.addEventListener("click", () => {
             const id = boton.dataset.id;
             eliminarDelCarrito(id);
@@ -93,7 +92,7 @@ function calcularTotal() {
         precioTotal.textContent = total.toFixed(2) + " €";
     }
 };
-
+ 
 function eliminarDelCarrito(id) {
     const posicion = carrito.findIndex(producto => producto.id === id);
  
@@ -113,10 +112,17 @@ if (descuentoForm) {
     descuentoForm.addEventListener("submit", function(evento){
         evento.preventDefault();
         const codigo = codigoDescuento.value.trim().toUpperCase();
+        console.log("Formulario de descuento enviado");
  
         if (codigo === "PIZZA10") {
             descuentoAplicado = 10;
             alert("Código aplicado correctamente: 10% de descuento.")
+
+            //si el profe me pide que se redirija a la pagina de login;
+           // window.location.href = "login.html"
+            window.location.assign("login.html");
+            //si no me funciona el anterior: window.location.assign("login.html");
+            console.log("Intentando ir a login.html");
         }
         else {
             descuentoAplicado = 0;
@@ -127,3 +133,4 @@ if (descuentoForm) {
 };
  
 mostrarCarrito(); //NUEVO Y AÑADIDO
+ 

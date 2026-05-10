@@ -32,6 +32,7 @@ body.light{
 
 /* Dark mode (por clase: body.dark) */
 body.dark{
+  
   /* ya coincide con :root; se deja para que JS alterna explícitamente */
 }
 
@@ -179,7 +180,9 @@ body.light .toggle__track{
 }
 
 /* Ejemplo visual: si JS añade .is-dark al botón */
-.toggle.is-dark .toggle__thumb{ left: 22px; }
+.toggle.is-dark .toggle__thumb{
+   left: 22px; 
+  }
 
 /* =========================
    Hero
