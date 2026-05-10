@@ -1,6 +1,8 @@
 const body = document.body;
 const toggle = document.getElementById("toggleModo");
 
+
+if (toggle){
 toggle.addEventListener("click", () => {
     //cambiamos el fondo de la pagina
     body.classList.toggle("light");
@@ -14,3 +16,5 @@ toggle.addEventListener("click", () => {
         toggle.textContent = "🌙";
     }
 });
+}
+

@@ -1,7 +1,6 @@
 const tarjetas = document.querySelectorAll(".card");
 
 
-
 const listaVacia = document.getElementById("cartContainer");
 
 const listaCarrito = document.getElementById("cartList");
@@ -34,57 +33,52 @@ function anadirAlCarrito(id, nombre, precio) {
     mostrarCarrito(); //NUEVO Y AÑADIDO
 };
 
-// --- BLOQUE CORREGIDO PARA AÑADIR PRODUCTOS ---
-tarjetas.forEach((tarjeta) => {
-    // Buscamos el botón de añadir DENTRO de esta tarjeta específica
+tarjetas.forEach(tarjeta => {
+    //Buscamos el botón de añadir dentro de la tarjeta
     const botonAnadir = tarjeta.querySelector('[data-action="add"]');
  
-    if (botonAnadir) {
-        botonAnadir.addEventListener("click", (e) => {
-            e.preventDefault();
+    botonAnadir.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        //Extraemos el NOMBRE del <h3>
+            const nombre = tarjeta.querySelector("h3").textContent.trim();
+        //Extraemos el PRECIO del <span class="precio">
+        //Usamos .replace para quitar el símbolo "€" y que parseFloat pueda leer el número
+            const precioTexto = tarjeta.querySelector(".precio").textContent;
+            const precio = parseFloat(precioTexto.replace("€", "").trim());
+        //El ID lo podemos generar usando el nombre o un índice si no hay data-id
+            const id = nombre.toLowerCase().replace(/\s+/g, '-');
             
-            // Sacamos los datos de los atributos data- que ya tienes en tu HTML
-            const id = tarjeta.dataset.id;
-            const nombre = tarjeta.dataset.name;
-            const precio = parseFloat(tarjeta.dataset.price);
-     
-            console.log("Intentando añadir:", nombre); // Para que veas en consola si funciona
-            anadirAlCarrito(id, nombre, precio);
-            alert(`${nombre} añadida al carrito`);
-        });
-    }
+        anadirAlCarrito(id, nombre, precio);
+    });
 });
 
 function mostrarCarrito() {
-    // Si NO existe el elemento en el HTML actual, salimos de la función sin dar error
-    if (!listaCarrito) return; 
- 
+    if (!listaCarrito) return;
     listaCarrito.innerHTML = "";
-    
-    // Si el carrito está vacío, podrías poner un mensaje opcional
-    if (carrito.length === 0) {
-        listaCarrito.innerHTML = "<li>El carrito está vacío</li>";
-        if (precioTotal) precioTotal.textContent = "0.00 €";
-        return;
-    }
 
     carrito.forEach(producto => {
+        // Importante: comprueba que producto.nombre y producto.precio existan
         listaCarrito.innerHTML += `
         <li class="cart__item">
-            <span>${producto.nombre}</span>
-            <span>${(producto.precio * producto.cantidad).toFixed(2)} €</span>
-            <span>${producto.cantidad}</span>
+            <span>${producto.nombre}</span> 
+            <span>${(producto.precio || 0).toFixed(2)} €</span>
+            <span>Cant: ${producto.cantidad}</span>
             <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
         </li>
         `;
     });
- 
-    // Re-asignar eventos a los botones de eliminar que acabamos de crear
+
+    // ¡ESTO ES LO QUE TE FALTA! Asignar el evento a los botones recién creados
     const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+    
     botonesEliminar.forEach(boton => {
-        boton.onclick = () => eliminarDelCarrito(boton.dataset.id);
+        boton.onclick = function() {
+            const idParaBorrar = this.getAttribute("data-id");
+            eliminarDelCarrito(idParaBorrar);
+        };
     });
- 
+
     calcularTotal();
 }
 
