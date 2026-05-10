@@ -7,10 +7,10 @@ const listaVacia = document.getElementById("cartContainer");
 const listaCarrito = document.getElementById("cartList");
 
 const precioTotal = document.getElementById("totalPrice");
-const descuentoForm = document.getElementById("discountForm");
-const codigoDescuento = document.getElementById("discountCode");
+const formularioDescuento = document.getElementById("discountForm");
+const inputDescuento = document.getElementById("discountCode");
 
-const botonAplicarDescuento= descuentoForm?.querySelector('button[type="submit"]');
+const botonAplicarDescuento= formularioDescuento?.querySelector('button[type="submit"]');
 
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //NUEVO Y AÑADIDO
@@ -34,51 +34,59 @@ function anadirAlCarrito(id, nombre, precio) {
     mostrarCarrito(); //NUEVO Y AÑADIDO
 };
 
-tarjetas.forEach((tarjeta, index) => {
-    // Buscamos el botón dentro de la tarjeta (sea cual sea su clase o data)
-    const botonAnadir = document.querySelectorAll(".productos .btn");
+// --- BLOQUE CORREGIDO PARA AÑADIR PRODUCTOS ---
+tarjetas.forEach((tarjeta) => {
+    // Buscamos el botón de añadir DENTRO de esta tarjeta específica
+    const botonAnadir = tarjeta.querySelector('[data-action="add"]');
  
     if (botonAnadir) {
         botonAnadir.addEventListener("click", (e) => {
             e.preventDefault();
-            // Si no tienes data-attributes en el HTML, los sacamos del contenido:
-            const id = tarjeta.dataset.id || index + 1;
-            const nombre = tarjeta.dataset.name || tarjeta.querySelector("h3").textContent;
-            const precioTexto = tarjeta.dataset.price || tarjeta.querySelector(".precio").textContent;
-            const precio = parseFloat(precioTexto.replace("€", ""));
+            
+            // Sacamos los datos de los atributos data- que ya tienes en tu HTML
+            const id = tarjeta.dataset.id;
+            const nombre = tarjeta.dataset.name;
+            const precio = parseFloat(tarjeta.dataset.price);
      
+            console.log("Intentando añadir:", nombre); // Para que veas en consola si funciona
             anadirAlCarrito(id, nombre, precio);
+            alert(`${nombre} añadida al carrito`);
         });
     }
 });
 
 function mostrarCarrito() {
-    if (!listaCarrito) return;
+    // Si NO existe el elemento en el HTML actual, salimos de la función sin dar error
+    if (!listaCarrito) return; 
  
     listaCarrito.innerHTML = "";
- 
+    
+    // Si el carrito está vacío, podrías poner un mensaje opcional
+    if (carrito.length === 0) {
+        listaCarrito.innerHTML = "<li>El carrito está vacío</li>";
+        if (precioTotal) precioTotal.textContent = "0.00 €";
+        return;
+    }
+
     carrito.forEach(producto => {
         listaCarrito.innerHTML += `
         <li class="cart__item">
             <span>${producto.nombre}</span>
-            <span>${producto.precio.toFixed(2)} €</span>
+            <span>${(producto.precio * producto.cantidad).toFixed(2)} €</span>
             <span>${producto.cantidad}</span>
             <button class="btn-eliminar" data-id="${producto.id}">Eliminar</button>
         </li>
         `;
     });
  
-    const botonesEliminarCarrito = document.querySelectorAll(".btn-eliminar"); //NUEVO DE AQUÍ HACIA ABAJO
- 
-    botonesEliminarCarrito.forEach(boton => {
-        boton.addEventListener("click", () => {
-            const id = boton.dataset.id;
-            eliminarDelCarrito(id);
-        });
+    // Re-asignar eventos a los botones de eliminar que acabamos de crear
+    const botonesEliminar = document.querySelectorAll(".btn-eliminar");
+    botonesEliminar.forEach(boton => {
+        boton.onclick = () => eliminarDelCarrito(boton.dataset.id);
     });
  
     calcularTotal();
-};
+}
 
 function calcularTotal() {
     let total = 0;
@@ -86,8 +94,8 @@ function calcularTotal() {
     carrito.forEach(producto => {
         total += producto.precio * producto.cantidad;
     });
-    if (descuentoAplicado > 0){
-        total = total * 0.9;
+    if (descuentoAplicado === 25){
+        total = total * 0.75;
     }
     if (precioTotal) {
         precioTotal.textContent = total.toFixed(2) + " €";
@@ -109,28 +117,31 @@ function eliminarDelCarrito(id) {
     mostrarCarrito();
 }
 
-if (descuentoForm) {
-    descuentoForm.addEventListener("submit", function(evento){
+if (formularioDescuento) {
+    formularioDescuento.addEventListener("submit", function(evento){
         evento.preventDefault();
-        const codigo = codigoDescuento.value.trim().toUpperCase();
+        const codigo = inputDescuento.value.trim().toUpperCase();
  
         if (codigo === "PIZZA25") {
-            const loginCorrecto = pedirDatos();
+            let usuario = prompt("Introduce el usuario (examen):");
+            let contrasena = prompt("Introduce la contraseña (123456):");
 
-            if(loginCorrecto){
+            if (usuario === "examen" && contrasena === "123456") {
                 descuentoAplicado = 25;
-                alert("Código aplicado correctamente, para continuar inicie sesión.")
-            } else{
+                alert("¡Acceso correcto! Se ha aplicado el 25% de descuento.");
+                sessionStorage.setItem("inicioSesion", "true");
+            } else {
                 descuentoAplicado = 0;
-                alert("Login incorrecto. No se aplicó el descuento.");
+                alert("Usuario o contraseña incorrectos. No se aplicará descuento.");
             }
-        }
-        else {
+        } else {
             descuentoAplicado = 0;
             alert("Código de descuento no válido");
         }
+        
+        // 3. Recalcular siempre al final
         calcularTotal();
     });
-};
+}
  
 mostrarCarrito(); //NUEVO Y AÑADIDO
