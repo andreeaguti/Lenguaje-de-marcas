@@ -1,6 +1,6 @@
 const tarjetas = document.querySelectorAll(".card");
 
-const botonAnadir = document.querySelectorAll(".productos .btn");
+
 
 const listaVacia = document.getElementById("cartContainer");
 
@@ -36,10 +36,10 @@ function anadirAlCarrito(id, nombre, precio) {
 
 tarjetas.forEach((tarjeta, index) => {
     // Buscamos el botón dentro de la tarjeta (sea cual sea su clase o data)
-    const btn = tarjeta.querySelector(".btn");
+    const botonAnadir = document.querySelectorAll(".productos .btn");
  
-    if (btn) {
-        btn.addEventListener("click", (e) => {
+    if (botonAnadir) {
+        botonAnadir.addEventListener("click", (e) => {
             e.preventDefault();
             // Si no tienes data-attributes en el HTML, los sacamos del contenido:
             const id = tarjeta.dataset.id || index + 1;
@@ -114,13 +114,20 @@ if (descuentoForm) {
         evento.preventDefault();
         const codigo = codigoDescuento.value.trim().toUpperCase();
  
-        if (codigo === "PIZZA10") {
-            descuentoAplicado = 10;
-            alert("Código aplicado correctamente: 10% de descuento.")
+        if (codigo === "PIZZA25") {
+            const loginCorrecto = pedirDatos();
+
+            if(loginCorrecto){
+                descuentoAplicado = 25;
+                alert("Código aplicado correctamente, para continuar inicie sesión.")
+            } else{
+                descuentoAplicado = 0;
+                alert("Login incorrecto. No se aplicó el descuento.");
+            }
         }
         else {
             descuentoAplicado = 0;
-            alert("Descuento no válido");
+            alert("Código de descuento no válido");
         }
         calcularTotal();
     });

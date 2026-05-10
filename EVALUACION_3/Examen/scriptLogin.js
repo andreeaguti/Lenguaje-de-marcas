@@ -1,32 +1,39 @@
-//para el inicio de sesion
-const email = document.getElementById("email");
-const contrasena = document.getElementById("password");
+window.addEventListener("load", iniciarPagina); //carga la página
 
-function validarLogin() {
-    const correoUsuario = email.value.trim();
-    const passUsuario = contrasena.value.trim();
-
-    // Definimos los datos "correctos"
-    const EMAIL_CORRECTO = "admin";
-    const PASS_CORRECTA = "1234";
-
-    if (correoUsuario === EMAIL_CORRECTO && passUsuario === PASS_CORRECTA) {
-        alert("¡Acceso aceptado, continue con el pago!");
-        window.location.href = "index.html"; // Rediriges al catálogo
-    } else {
-        alert("Email o contraseña incorrectos.");
+function iniciarPagina(){
+    let inicioSesion = sessionStorage.getItem ("inicioSesion"); //El item que busca es inicioSesion
+    
+    if (inicioSesion === "true"){ //Si estoy iniciada sesión me carga la página
+        return;
     }
-}
+    else {
+        pedirDatos();
+    }
+};
 
-// 1. Capturamos el formulario (usa querySelector porque es por clase)
-const loginForm = document.querySelector(".form");
 
-// 2. Creamos el evento
-if (loginForm) {
-    loginForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // <--- ESTO ES VITAL: Detiene la recarga
-        
-        // Llamamos a la lógica de validación
-        validarLogin();
-    });
-}
+function pedirDatos(){
+    let usuario = prompt("Introduce el usuario: ");
+    let contraseña = prompt("Introduce la contraseña: ");
+
+    comprobarDatos(usuario,contraseña);
+};
+
+function comprobarDatos(usuario,contraseña){
+
+    let usuarioCorrecto = "examen";
+    let contraseñaCorrecta = "1234";
+
+    if(usuario === usuarioCorrecto && contraseña === contraseñaCorrecta){
+
+        sessionStorage.setItem("inicioSesion", "true");
+    }
+
+    else{
+        return false;
+    }
+
+
+
+
+    };
