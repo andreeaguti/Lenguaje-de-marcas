@@ -1,0 +1,110 @@
+body {
+    font-family: 'Comic Sans MS', cursive;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Para evitar la barra de desplazamiento */
+}
+
+.background-images {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1; /* Colocar detrás de otros elementos */
+}
+
+.background-image {
+    position: absolute;
+    width: 50%; /* Dividir la imagen en dos */
+    height: 50%; /* Dividir la imagen en dos */
+    background-repeat: repeat;
+    background-size: cover;
+    pointer-events: none;
+}
+
+.background-image:nth-child(1) {
+    top: 0;
+    left: 0;
+    background-image: url('imagen1.jpg');
+}
+
+.background-image:nth-child(2) {
+    top: 0;
+    right: 0;
+    background-image: url('imagen2.jpg');
+}
+
+.background-image:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    background-image: url('imagen3.jpg');
+}
+
+.background-image:nth-child(4) {
+    bottom: 0;
+    right: 0;
+    background-image: url('imagen4.jpg');
+}
+
+.background-image:nth-child(5) {
+    top: 25%; /* Dividir la imagen en dos verticalmente */
+    left: 25%; /* Dividir la imagen en dos horizontalmente */
+    width: 50%; /* Reducir el tamaño a la mitad */
+    height: 50%; /* Reducir el tamaño a la mitad */
+    background-image: url('imagen5.jpg');
+}
+
+.background-image:nth-child(6) {
+    bottom: 25%; /* Dividir la imagen en dos verticalmente */
+    right: 25%; /* Dividir la imagen en dos horizontalmente */
+    width: 50%; /* Reducir el tamaño a la mitad */
+    height: 50%; /* Reducir el tamaño a la mitad */
+    background-image: url('imagen6.jpg');
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Blanco semitransparente */
+}
+
+.title {
+    font-size: 36px;
+    color: #2E8B57; /* Verde oscuro */
+}
+
+.header-image {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.8; /* Opacidad semitransparente */
+}
+
+.main-content {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.btn {
+    font-size: 24px;
+    background-color: #FFD700; /* Amarillo */
+    color: #8B4513; /* Marrón */
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.membership {
+    background-color: red;
+    text-align: center;
+}
+
+.membership-text {
+    font-size: 28px;
+    color: yellow;
+    padding: 20px;
+    margin: 0;
+}
