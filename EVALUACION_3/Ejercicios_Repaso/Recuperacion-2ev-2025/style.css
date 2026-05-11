@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+body.light {
+    font-family: Arial, sans-serif;
+    background-color: #7eebbd;
+    padding: 20px;
+}
+
+.main-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 2px solid #333; /* El borde exterior que se ve en la foto */
+}
+
+/* Ejercicio 2: Estilos básicos para botones */
+.admin-controls {
+    padding: 10px;
+    background: #eee;
+    display: flex;
+    gap: 10px;
+    border-bottom: 2px solid #333;
+}
+
+/* Header - Imagen Corporativa */
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid #333;
+    font-weight: bold;
+    font-size: 1.2rem;
+    
+    
+}
+
+#mainHeader.light {
+    background-color: yellow; /* O el color que prefieras */
+}
+
+
+/* El Grid principal de 4 columnas */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 300px;
+}
+
+.menu-column {
+    border-right: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-column:last-child {
+    border-right: none;
+}
+
+.col-header {
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.col-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+}
+
+.price-tag {
+    border-left: 1px solid #333;
+    padding-left: 10px;
+}
+
+/* Footer con 2 columnas */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 2px solid #333;
+    text-align: center;
+}
+
+.footer-item {
+    padding: 10px;
+}
+
+.footer-item:first-child {
+    border-right: 2px solid #333;
+}
+
+/* RESPONSIVIDAD (Punto clave para el 1.5) */
+
+/* En móviles, pasamos de 4 columnas a 1 o 2 */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .menu-column:nth-child(2) {
+        border-right: none;
+    }
+    
+    .menu-column:nth-child(n+3) {
+        border-top: 2px solid #333;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-column {
+        border-right: none;
+        border-bottom: 2px solid #333;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-item:first-child {
+        border-right: none;
+        border-bottom: 2px solid #333;
+    }
+}
