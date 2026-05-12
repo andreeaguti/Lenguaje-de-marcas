@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Burger Master - Práctica Examen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="main-title">Burger Master Premium</h1>
+        <p>Haz clic en el título para ver nuestra historia.</p>
+    </header>
+
+    <nav>
+        <button id="btn-modo">Cambiar Modo Día/Noche</button>
+    </nav>
+
+    <main>
+        <!-- SECCIÓN 1: Selección de Producto -->
+        <section class="pedido">
+            <h2>Configura tu Menú</h2>
+            <div class="producto">
+                <img id="burger-img" src="https://img.freepik.com/foto-gratis/hamburguesa-carne-queso-derretido-tomate-generada-ia_188544-18157.jpg" alt="Hamburguesa" style="width: 200px; border-radius: 10px;">
+                <p>Precio Base: <span id="precio-total">8</span>€</p>
+                
+                <label>Elige tu carne:</label>
+                <select id="select-carne">
+                    <option value="0">Ternera (Básico)</option>
+                    <option value="2">Vaca Madurada (+2€)</option>
+                    <option value="3">Wagyu (+3€)</option>
+                </select>
+
+                <div class="extras">
+                    <input type="checkbox" class="extra" value="1"> Queso (+1€)
+                    <input type="checkbox" class="extra" value="1.5"> Bacon (+1.5€)
+                </div>
+
+                <button id="btn-pedir">Calcular Precio Final</button>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: Zona Interactiva -->
+        <section id="zona-interactiva">
+            <div id="zona-vip" style="background-color: gold; padding: 20px; margin-top: 20px; color: black;">
+                <h3>ZONA EXCLUSIVA VIP</h3>
+                <p>Pasa el ratón para descubrir el código secreto.</p>
+            </div>
+            
+            <button id="btn-donar">Donar propina al repartidor</button>
+        </section>
+    </main>
+
+    <footer>
+        <button id="btn-socio">¡Hazte Socio Master!</button>
+    </footer>
+    <script src="script.js"></script>
+    <script src="scriptModoNoche.js"></script>
+</body>
+</html>
