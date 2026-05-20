@@ -34,5 +34,20 @@
 
 .carousel-inner img {
     width: 100%;
-    height:500px;
+    height:450px;
+}
+
+footer {
+    background-color: #111111 !important;
+}
+footer .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important; 
+}
+
+footer .nav-link:hover {
+    color: #ffffff !important;
+}
+.card-img-top, .carousel-item img {
+    object-fit: cover;
+    height: 250px; /* Ajusta la altura para que todas las tarjetas midan lo mismo */
 }
