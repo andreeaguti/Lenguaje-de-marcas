@@ -1,0 +1,66 @@
+/* Variables de color manuales */
+body {
+  background-color: #f4f4f4 !important;
+}
+
+/* Forzar la cabecera a Naranja TEMU */
+.clon-header {
+  background-color: #fb7701 !important;
+  display: block !important;
+}
+
+/* Textos e indicadores de categorías */
+.clon-texto-naranja {
+  color: #fb7701 !important;
+}
+
+.clon-bg-naranja {
+  background-color: #fb7701 !important;
+  color: #ffffff !important;
+}
+
+/* El botón de enviar del formulario */
+.clon-btn-naranja {
+  background-color: #fb7701 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.clon-btn-naranja:hover {
+  background-color: #d66400 !important;
+}
+
+/* Fondo de la sección de la rejilla (Naranja súper clarito de fondo) */
+.clon-fondo-cuerpo {
+  background-color: #ffe0b2 !important;
+}
+
+/* Borde exterior naranja del contenedor */
+.clon-contenedor {
+  background-color: #ffffff !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 2px solid #fb7701 !important;
+}
+
+/* Marcadores grises de las imágenes de producto */
+.clon-placeholder {
+  background-color: #e9ecef !important;
+  border-bottom: 1px solid #dee2e6 !important;
+  height: 110px !important;
+}
+
+/* El banner central del boceto */
+.clon-banner {
+  background-color: #ffffff !important;
+  border: 2px solid #fb7701 !important;
+  color: #fb7701 !important;
+  padding: 50px 10px !important;
+}
+
+/* La gran columna de promoción lateral derecha */
+.clon-promo {
+  background-color: #fb7701 !important;
+  color: #ffffff !important;
+  min-height: 420px !important;
+}
