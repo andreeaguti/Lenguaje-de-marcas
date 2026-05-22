@@ -55,4 +55,12 @@
     border-radius: 4px 0 0 4px; /* Redondeado solo a la izquierda */
 }
 
-.
+.carousel-indicators [data-bs-target] {
+    background-color: #ff9900; /* Reemplaza por el color que quieras (ej: naranja Amazon) */
+    opacity: 0.5; /* Transparencia para las que no están seleccionadas */
+}
+/* Cambia el color de la barrita que está activa en ese momento */
+.carousel-indicators .active {
+    background-color: #ff9900; 
+    opacity: 1; /* Sin transparencia para resaltar cuál está activa */
+}
