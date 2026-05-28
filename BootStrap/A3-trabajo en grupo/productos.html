@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clon - Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.jpg" alt="Logo" width="50" height="44" class="d-inline-block align-text-top me-2 rounded">
+                <span class="fw-bold">AMAZON</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#tecnologia">Tecnología</a></li>
+                            <li><a class="dropdown-item" href="#muebles">Muebles</a></li>
+                            <li><a class="dropdown-item" href="#electrodomesticos">Electrodomésticos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Mostrar todos los productos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Buscar">
+                    <button class="btn btn-outline-warning" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="text-center fw-bold mb-5">Nuestro Catálogo</h1>
+
+        <section id="tecnologia" class="mb-5 pt-4">
+            <h2 class="border-bottom pb-2 fw-bold text-dark">Tecnología Premium</h2>
+            
+            <div class="text-center my-4 bg-white p-4 rounded border shadow-sm">
+                <img src="https://static.k-tuin.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/c/o/comprar-auriculares-airpods-max-purpura.png" class="img-fluid rounded" style="max-height: 200px;" alt="Tecnología">
+                <p class="text-muted mt-3 mb-0">Dispositivos de última generación con rendimiento excepcional y diseño acústico avanzado.</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-purple_FV1_FMT_WHH?wid=752&hei=636&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmdEFZMGtjOXNTYXJEaHFYa1lFVzIyUjUvWUFQTXRnUEZqWWRRU2d1WFJwZlcrN05qS3VEVG0zVXZGNUlPVjFnM0RNZGEwYVUyTzcvZlg1UkxwTzJQS1hlY1IycnJZVHZFOVZIbjFReXZ1dFI" class="card-img-top p-3" alt="AirPods Max Púrpura" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">AirPods Max Púrpura</h5>
+                            <p class="text-muted small">Diseño supraaural revolucionario con cancelación de ruido inteligente.</p>
+                            <h4 class="text-primary fw-bold mb-3">629,00 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalAirpods">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://m.media-amazon.com/images/I/71FSIp+tDNL._AC_UF894,1000_QL80_.jpg" class="card-img-top p-3" alt="Teclado Mecánico RGB" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Teclado Mecánico RGB</h5>
+                            <p class="text-muted small">Switches mecánicos silenciosos y retroiluminación personalizada.</p>
+                            <h4 class="text-primary fw-bold mb-3">89,99 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalTeclado">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://media.ldlc.com/r1600/ld/products/00/06/18/21/LD0006182176.jpg" class="card-img-top p-3" alt="Ratón Inalámbrico Pro" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Ratón Inalámbrico Pro</h5>
+                            <p class="text-muted small">Sensor óptico de alta precisión con batería recargable de larga duración.</p>
+                            <h4 class="text-primary fw-bold mb-3">45,50 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalRaton">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="muebles" class="mb-5 pt-4">
+            <h2 class="border-bottom pb-2 fw-bold text-dark">Muebles y Organización</h2>
+            
+            <div class="text-center my-4 bg-white p-4 rounded border shadow-sm">
+                <img src="https://m.media-amazon.com/images/I/614pdOpzEAL._AC_SL1000_.jpg" class="img-fluid rounded" style="max-height: 200px;" alt="Muebles">
+                <p class="text-muted mt-3 mb-0">Estructuras funcionales y soluciones modulares pensadas para optimizar el espacio de tu hogar.</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src="https://m.media-amazon.com/images/I/71+rjmnJY1L._AC_UF894,1000_QL80_.jpg" class="card-img-top p-3" alt="Armario Multifuncional" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Armario Multifuncional</h5>
+                            <p class="text-muted small">Estructura metálica ligera con cubierta de tela modular transpirable.</p>
+                            <h4 class="text-primary fw-bold mb-3">34,95 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalArmario">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://www.hogarterapia.com/31147-large_default/escritorio-hudson-de-diseno-minimalista.jpg" class="card-img-top p-3" alt="Escritorio Minimalista" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Escritorio Minimalista</h5>
+                            <p class="text-muted small">Mesa de estudio con estructura de acero reforzado y acabado en madera.</p>
+                            <h4 class="text-primary fw-bold mb-3">115,00 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalEscritorio">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://thumb.pccomponentes.com/w-530-530/articles/1083/10835766/138-ml-design-silla-de-oficina-ergonomica-con-asiento-regulable-y-reposacabezas-azul.jpg" class="card-img-top p-3" alt="Silla de Oficina Ergonómica" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Silla de Oficina Ergonómica</h5>
+                            <p class="text-muted small">Soporte lumbar ajustable con malla transpirable y ruedas suaves.</p>
+                            <h4 class="text-primary fw-bold mb-3">79,90 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalSilla">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="electrodomesticos" class="mb-5 pt-4">
+            <h2 class="border-bottom pb-2 fw-bold text-dark">Electrodomésticos eficientes</h2>
+            
+            <div class="text-center my-4 bg-white p-4 rounded border shadow-sm">
+                <img src="https://m.media-amazon.com/images/I/71O5394x1HL._AC_SL1500_.jpg" class="img-fluid rounded" style="max-height: 200px;" alt="Electrodomésticos">
+                <p class="text-muted mt-3 mb-0">Pequeños y grandes dispositivos diseñados para facilitar las tareas diarias en la cocina.</p>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://m.media-amazon.com/images/I/615UGK+Lm4L._AC_UF894,1000_QL80_.jpg" class="card-img-top p-3" alt="AirFrier Topz 100L" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">AirFrier Topz 100L</h5>
+                            <p class="text-muted small">Freidora de aire de gran capacidad con sistema de convección envolvente.</p>
+                            <h4 class="text-primary fw-bold mb-3">189,00 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalAirfrier">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://m.media-amazon.com/images/I/61faKD6NN7L._AC_UF894,1000_QL80_.jpg" class="card-img-top p-3" alt="Cafetera Express Automática" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Cafetera Express Automática</h5>
+                            <p class="text-muted small">Bomba de presión de 15 bares con espumador de leche integrado.</p>
+                            <h4 class="text-primary fw-bold mb-3">124,99 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalCafetera">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm border">
+                        <img src = "https://m.media-amazon.com/images/I/71iuQBRxMWL.jpg" class="card-img-top p-3" alt="Batidora de Vaso Profesional" style="max-height: 200px; object-fit: contain;">
+                        <div class="card-body d-flex flex-column justify-content-between text-center">
+                            <h5 class="card-title fw-bold">Batidora de Vaso Profesional</h5>
+                            <p class="text-muted small">Cuchillas de acero inoxidable con jarra de vidrio termorresistente.</p>
+                            <h4 class="text-primary fw-bold mb-3">59,95 €</h4>
+                            <button type="button" class="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#modalBatidora">Ver detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal fade" id="modalAirpods" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: AirPods Max Púrpura</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Cancelación activa de ruido inteligente que filtra el sonido exterior. Almohadillas viscoelásticas para un aislamiento excepcional.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">629,00 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalTeclado" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Teclado Mecánico RGB</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Disposición completa con switches mecánicos ideales para largas sesiones de codificación y juego. Cable trenzado de alta resistencia.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">89,99 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalRaton" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Ratón Inalámbrico Pro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Diseño ergonómico y botones laterales configurables. Conexión estable de 2.4 GHz sin retrasos de señal.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">45,50 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalArmario" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Armario Básico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Fácil de montar sin herramientas adicionales. Ideal para almacenamiento temporal o habitaciones de invitados.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">34,95 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEscritorio" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Escritorio Minimalista</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Superficie amplia y resistente al agua. Diseño elegante que encaja perfectamente en cualquier rincón u oficina en casa.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">115,00 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalSilla" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Silla Ergonómica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Regulación de altura por pistón de gas de clase 4 y base giratoria estable de cinco radios.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">79,90 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalAirfrier" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: AirFrier Topz 100L</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Pantalla táctil digital con múltiples programas preestablecidos. Cocina de forma saludable reduciendo el uso de grasa al mínimo.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">189,00 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCafetera" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Cafetera Express</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Ideal para espressos y cappuccinos cremosos en pocos segundos. Depósito de agua extraíble de gran capacidad.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">124,99 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalBatidora" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Detalle: Batidora de Vaso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">Motor de alta potencia capaz de picar hielo y alimentos duros sin esfuerzo. Fácil limpieza con componentes aptos para lavavajillas.</p>
+                    <p class="fw-bold">Precio: <span class="text-primary">59,95 €</span></p>
+                    <button class="btn btn-warning w-100 fw-bold mt-3" type="button">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <h5 class="fw-bold text-warning mb-3">Contacto</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Calle Alta, Santander, Cantabria</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i> +34 942 00 00 00</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> soporte@amazonclon.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold text-light mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none link-light">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="text-secondary text-decoration-none link-light">Todos los Productos</a></li>
+                        <li class="mb-2"><a href="carrito.html" class="text-secondary text-decoration-none link-light">Mi Carrito</a></li>
+                        <li class="mb-2"><a href="nosotros.html" class="text-secondary text-decoration-none link-light">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-bold text-light mb-3">Síguenos</h5>
+                    <div class="d-flex gap-3 fs-4">
+                        <a href="#" class="text-secondary link-warning"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary link-warning"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary link-warning"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-light mb-3">Boletín de Noticias</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            <button class="btn btn-warning fw-bold text-dark" type="submit">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-4">
+            <div class="text-center text-md-start">
+                <p class="text-secondary small mb-0">© 2026 Amazon Clon, Inc. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

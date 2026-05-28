@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clon - Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-light d-flex flex-column justify-content-between" style="overflow: hidden; height: 100vh;">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="logo.jpg" alt="Amazon Clon Logo" width="50" height="44" class="d-inline-block align-text-top me-2 rounded">
+                <span class="fw-bold">AMAZON</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="productos.html#tecnologia">Tecnología</a></li>
+                            <li><a class="dropdown-item" href="productos.html#muebles">Muebles</a></li>
+                            <li><a class="dropdown-item" href="productos.html#electrodomesticos">Electrodomésticos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="productos.html">Mostrar todos los productos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar productos..." aria-label="Buscar">
+                    <button class="btn btn-outline-warning" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-auto">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                
+                <div id="carouselExampleCaptions" class="carousel slide shadow mb-4" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner bg-white rounded">
+                        <div class="carousel-item active text-center py-3">
+                            <img src="https://static.k-tuin.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/c/o/comprar-auriculares-airpods-max-purpura.png" class="d-block img-fluid mx-auto" style="max-height: 200px; object-fit: contain;" alt="Tecnología Premium">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-1" style="bottom: 10px;">
+                                <h6 class="mb-0">Lo último en Tecnología</h6>
+                            </div>
+                        </div>
+                        <div class="carousel-item text-center py-3">
+                            <img src="https://m.media-amazon.com/images/I/614pdOpzEAL._AC_SL1000_.jpg" class="d-block img-fluid mx-auto" style="max-height: 200px; object-fit: contain;" alt="Muebles y Organización">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-1" style="bottom: 10px;">
+                                <h6 class="mb-0">Hogar y Confort</h6>
+                            </div>
+                        </div>
+                        <div class="carousel-item text-center py-3">
+                            <img src="https://m.media-amazon.com/images/I/71O5394x1HL._AC_SL1500_.jpg" class="d-block img-fluid mx-auto" style="max-height: 200px; object-fit: contain;" alt="Electrodomésticos de Cocina">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-1" style="bottom: 10px;">
+                                <h6 class="mb-0">Cocina Eficiente</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                        <span class="carousel-control-next-icon bg-dark rounded-circle" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-2 g-3 text-center">
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h6 class="card-title fw-bold mb-1">Ofertas Flash del Día</h6>
+                                <p class="card-text text-muted small mb-2">Descuentos exclusivos por tiempo limitado en tecnología y hogar.</p>
+                                <button type="button" class="btn btn-sm btn-dark w-50 mx-auto" data-bs-toggle="modal" data-bs-target="#modalInfo">Ver Ofertas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h6 class="card-title fw-bold mb-1">Tendencias de Temporada</h6>
+                                <p class="card-text text-muted small mb-2">Descubre los artículos más vendidos elegidos por nuestros usuarios.</p>
+                                <button type="button" class="btn btn-sm btn-dark w-50 mx-auto" data-bs-toggle="modal" data-bs-target="#modalProductos">Ver Más</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h6 class="card-title fw-bold mb-1">Pequeños Negocios</h6>
+                                <p class="card-text text-muted small mb-2">Compra directamente a marcas locales y artesanos independientes.</p>
+                                <button type="button" class="btn btn-sm btn-dark w-50 mx-auto" data-bs-toggle="modal" data-bs-target="#modalPymes">Visitar Tiendas</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body p-3 d-flex flex-column justify-content-between">
+                                <h6 class="card-title fw-bold mb-1">Ventajas Amazon Prime</h6>
+                                <p class="card-text text-muted small mb-2">Disfruta de envíos gratis ilimitados, series y música sin anuncios.</p>
+                                <button type="button" class="btn btn-sm btn-dark w-50 mx-auto" data-bs-toggle="modal" data-bs-target="#modalSocial">Ver Ventajas</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalInfo" tabindex="-1" aria-labelledby="modalInfoLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalInfoLabel">Ofertas Flash</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p>Los precios especiales mostrados en la página web están sujetos a disponibilidad de stock. Las promociones se actualizan cada 24 horas y se aplican directamente en el desglose final antes de tramitar el pedido.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalProductos" tabindex="-1" aria-labelledby="modalProductosLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalProductosLabel">Tendencias de la Semana</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p>Esta lista recoge los artículos con mayor volumen de pedidos durante los últimos siete días. Puedes consultar las especificaciones técnicas completas desde la sección de catálogo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalPymes" tabindex="-1" aria-labelledby="modalPymesLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalPymesLabel">Comercio Local</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p>Apoyamos el crecimiento de emprendedores locales integrando sus catálogos en nuestra plataforma de distribución. Todos los envíos de estas secciones cuentan con las mismas garantías de devolución habituales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalSocial" tabindex="-1" aria-labelledby="modalSocialLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalSocialLabel">Suscripción Prime</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p>Al activar tu suscripción accedes de forma inmediata a entregas en el mismo día para miles de artículos seleccionados, acceso prioritario a ofertas flash y almacenamiento de fotos ilimitado en la nube.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row gy-3">
+                <div class="col-md-3">
+                    <h6 class="fw-bold text-warning mb-2">Contacto</h6>
+                    <ul class="list-unstyled text-secondary small mb-0">
+                        <li class="mb-1"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Calle Alta, Santander</li>
+                        <li class="mb-1"><i class="bi bi-telephone-fill text-warning me-2"></i> +34 942 00 00 00</li>
+                        <li><i class="bi bi-envelope-fill text-warning me-2"></i> soporte@amazonclon.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h6 class="fw-bold text-light mb-2">Enlaces Rápidos</h6>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-1"><a href="index.html" class="text-secondary text-decoration-none link-light">Inicio</a></li>
+                        <li class="mb-1"><a href="productos.html" class="text-secondary text-decoration-none link-light">Productos</a></li>
+                        <li><a href="nosotros.html" class="text-secondary text-decoration-none link-light">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold text-light mb-2">Síguenos</h6>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="text-secondary link-warning" title="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary link-warning" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary link-warning" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold text-light mb-2">Boletín</h6>
+                    <form>
+                        <div class="input-group input-group-sm">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            <button class="btn btn-warning fw-bold text-dark" type="submit">OK</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary my-3">
+            <div class="row align-items-center small text-secondary">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2026 Amazon Clon, Inc. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-1 mt-md-0">
+                    <a href="#" class="text-secondary text-decoration-none me-3 link-light">Privacidad</a>
+                    <a href="#" class="text-secondary text-decoration-none link-light">Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>

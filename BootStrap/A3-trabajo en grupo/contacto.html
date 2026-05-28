@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo en Grupo - Contacto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpg" alt="Logo" width="50" height="44" class="d-inline-block align-text-top">
+            </a>
+            <a class="navbar-brand fw-bold" href="index.html">AMAZON</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="productos.html#airpods">AirPods Max Purpura</a></li>
+                            <li><a class="dropdown-item" href="productos.html#armario">Armario Basico</a></li>
+                            <li><a class="dropdown-item" href="productos.html#airfrier">AirFrier Topz 100L</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="productos.html">Mostrar todos los productos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="carrito.html">Carrito</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar (No funcional)" aria-label="Buscar">
+                    <button class="btn btn-outline-success" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <div class="bg-white p-4 p-sm-5 rounded border shadow-sm">
+                    <h1 class="fw-bold h2 mb-4 text-center">Formulario de Contacto</h1>
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label for="inputNombre" class="form-label fw-semibold">Nombre completo</label>
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Escribe tu nombre">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label fw-semibold">Correo electrónico</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="nombre@ejemplo.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="selectAsunto" class="form-label fw-semibold">Asunto de la consulta</label>
+                            <select class="form-select" id="selectAsunto">
+                                <option selected disabled value="">Selecciona una opción...</option>
+                                <option value="reclamaciones">Reclamaciones</option>
+                                <option value="trabaja">Trabaja con nosotros</option>
+                                <option value="ofertas">Ofertas</option>
+                                <option value="premium">Premium</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="textareaMensaje" class="form-label fw-semibold">Mensaje</label>
+                            <textarea class="form-control" id="textareaMensaje" rows="4" placeholder="Detalla tu consulta aquí..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Enviar consulta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <h5 class="fw-bold text-warning mb-3">Contacto</h5>
+                    <ul class="list-unstyled text-secondary">
+                        <li class="mb-2"><i class="bi bi-geo-alt-fill text-warning me-2"></i> Calle Alta, Santander, Cantabria</li>
+                        <li class="mb-2"><i class="bi bi-telephone-fill text-warning me-2"></i> +34 942 00 00 00</li>
+                        <li class="mb-2"><i class="bi bi-envelope-fill text-warning me-2"></i> soporte@amazonclon.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold text-light mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-secondary text-decoration-none link-light">Inicio</a></li>
+                        <li class="mb-2"><a href="productos.html" class="text-secondary text-decoration-none link-light">Todos los Productos</a></li>
+                        <li class="mb-2"><a href="carrito.html" class="text-secondary text-decoration-none link-light">Mi Carrito</a></li>
+                        <li class="mb-2"><a href="nosotros.html" class="text-secondary text-decoration-none link-light">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-bold text-light mb-3">Síguenos</h5>
+                    <div class="d-flex gap-3 fs-4">
+                        <a href="#" class="text-secondary link-warning"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-secondary link-warning"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-secondary link-warning"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-light mb-3">Boletín de Noticias</h5>
+                    <form>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            <button class="btn btn-warning fw-bold text-dark" type="submit">Suscribirse</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-4">
+            <div class="text-center text-md-start">
+                <p class="text-secondary small mb-0">© 2026 Amazon Clon, Inc. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</body>
+</html>

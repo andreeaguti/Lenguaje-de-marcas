@@ -1,0 +1,31 @@
+/* para el desplegable*/
+.dropdown-menu {
+    background-color: #232d3a !important;
+    border: 1px solid #febd69;
+}
+
+.dropdown-item {
+    color: #eeeeee !important;
+}
+
+.dropdown-item:hover {
+    background-color: #febd69 !important;
+    color: #131921 !important;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #febd69 !important;
+    opacity: 0.4;
+}
+
+/* boton buscador*/
+.navbar .btn-outline-success {
+    color: #febd69 !important;
+    border-color: #febd69 !important;
+    border-radius: 0 4px 4px 0; 
+}
+
+.navbar .btn-outline-success:hover {
+    background-color: #febd69 !important;
+    color: #131921 !important;
+}
